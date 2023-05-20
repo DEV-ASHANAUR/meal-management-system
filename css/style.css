@@ -425,32 +425,42 @@ header.sticky {
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-#menu {
-    text-align: right;
+/* Home_area  */
+.home_bg {
+    background-image: url(../img/home_img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-#menu li {
-    display: inline-block;
+.home_area {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000d8;
+}
+.home_area h2 {
+    font-size: 38px;
     color: #fff;
-}
-
-#menu li a {
-    font-size: 13px;
     text-transform: uppercase;
-    color: #000000;
-    padding: 0 32px;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
+    font-weight: 600;
+}
+.home_btn {
+    text-align: center;
+}
+.home_btn a {
+    display: inline-block;
+    padding: 6px 60px;
+    border: 2px solid #fff;
+    margin: 30px 20px 20px 0;
+    color: #ffd900;
     transition: 0.3s;
+    font-weight: 600;
 }
-
-#menu li:last-child a {
-    padding-right: 0;
-}
-
-#menu > li > a.active,
-#menu > li > a:hover {
-    color: #9e6919;
+.home_btn a:hover {
+    background-color: #ffd900;
+    border: 2px solid#ffd900;
+    color: #000000;
 }
 /* Login area */
 .login_area_box {
