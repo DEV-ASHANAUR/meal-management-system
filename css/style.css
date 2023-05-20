@@ -472,6 +472,7 @@ header.sticky {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 20px;
 }
 .login_right_area input {
     width: 100%;

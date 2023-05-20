@@ -1,40 +1,43 @@
 /*Extra large devices (large desktops, 1200px and up)*/
-@media (max-width: 1399px){
-	
+@media (max-width: 1399px) {
 }
-@media (min-width: 1400px) { 
-	
+@media (min-width: 1400px) {
 }
-@media (min-width: 1200px) { 
-	
+@media (min-width: 1200px) {
 }
 
-@media (max-width: 1199px) { 
-	
+@media (max-width: 1199px) {
 }
 
 @media (max-width: 991px) {
-	#menu{
-		display: none;
-	}
+    #menu {
+        display: none;
+    }
 
-	.hamburger-menu {
-		display: block;
-	}
-	.ofcavas-menu {
-		display: block;
-	}
-	
+    .hamburger-menu {
+        display: block;
+    }
+    .ofcavas-menu {
+        display: block;
+    }
 }
 
 /*Medium devices (tablets, 767px and down)*/
 @media (max-width: 767px) {
-	
+    .login_left_area {
+        display: none;
+    }
 }
 
 /*Small devices (landscape phones, 575px and down)*/
 @media (max-width: 575px) {
-	
+    .login_right_area {
+        height: calc(100vh - 80px);
+    }
+    .login_area_box {
+        margin: 40px;
+    }
+    .login_right_area h3 {
+        font-size: 18px;
+    }
 }
-
-
