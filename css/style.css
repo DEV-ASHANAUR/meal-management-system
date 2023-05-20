@@ -378,7 +378,22 @@ textarea:focus {
     margin-top: 70px;
     line-height: 22px;
 }
-
+.Custom_btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background-color: #3363f5;
+    padding: 8px;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.Custom_btn:hover {
+    /* opacity: 0.6; */
+    box-shadow: 0 0 8px 0px #979797;
+}
 header {
     position: fixed;
     top: 0;
@@ -439,6 +454,37 @@ header.sticky {
 }
 /* Login area */
 .login_area_box {
+    margin: 100px;
+    box-shadow: 0px 0px 20px 0px #cfcfcf;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.login_left_area {
+    height: calc(100vh - 200px);
+    background-image: url(../img/login_img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.login_right_area {
+    height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.login_right_area input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+}
+.Reg_google {
+    background-color: red;
+}
+.login_right_area a {
+    font-size: 13px;
 }
 /*return-to-top START CSS*/
 
