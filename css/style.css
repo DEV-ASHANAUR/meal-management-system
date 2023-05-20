@@ -442,6 +442,7 @@ header.sticky {
 .home_area h2 {
     font-size: 38px;
     color: #fff;
+    text-align: center;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -450,9 +451,10 @@ header.sticky {
 }
 .home_btn a {
     display: inline-block;
-    padding: 6px 60px;
+    padding: 6px 0;
+    width: 200px;
     border: 2px solid #fff;
-    margin: 30px 20px 20px 0;
+    margin: 30px 20px 0px 20px;
     color: #ffd900;
     transition: 0.3s;
     font-weight: 600;

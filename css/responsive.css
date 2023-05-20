@@ -27,6 +27,13 @@
     .login_left_area {
         display: none;
     }
+    .home_area h2 {
+        font-size: 26px;
+        color: #fff;
+    }
+    .home_btn a {
+        margin: 20px 10px 0px 10px;
+    }
 }
 
 /*Small devices (landscape phones, 575px and down)*/
