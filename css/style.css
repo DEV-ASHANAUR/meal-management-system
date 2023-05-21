@@ -547,7 +547,14 @@ header.sticky {
     margin: 10px 0;
     border: 1px solid #000000;
 }
-
+.Name_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Name_div > div {
+    width: 48%;
+}
 /*return-to-top START CSS*/
 
 .back-to-top {
