@@ -427,7 +427,7 @@ header.sticky {
 
 /* Home_area  */
 .home_bg {
-    background-image: url(../img/home_img.jpg);
+    background-image: url(../img/home_img.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -437,7 +437,7 @@ header.sticky {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000000d8;
+    background-color: #000000c3;
 }
 .home_area h2 {
     font-size: 38px;
@@ -464,12 +464,13 @@ header.sticky {
     border: 2px solid#ffd900;
     color: #000000;
 }
-/* Login area */
+/* -- Login area  -- */
 .login_area_box {
     margin: 100px;
     box-shadow: 0px 0px 20px 0px #cfcfcf;
     border-radius: 5px;
     overflow: hidden;
+    background-color: #fff;
 }
 .login_left_area {
     height: calc(100vh - 200px);
@@ -486,6 +487,9 @@ header.sticky {
     text-align: center;
     padding: 0 20px;
 }
+.login_right_box {
+    width: 75%;
+}
 .login_right_area input {
     width: 100%;
     padding: 8px;
@@ -499,6 +503,51 @@ header.sticky {
 .login_right_area a {
     font-size: 13px;
 }
+
+.Reg_area,
+.login_area {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000c3;
+}
+
+/* Reg area */
+
+.Reg_area_box {
+    margin: 100px;
+    box-shadow: 0px 0px 20px 0px #cfcfcf;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.Reg_left_area {
+    height: calc(100vh - 200px);
+    background-image: url(../img/login_img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Reg_right_area {
+    height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.Reg_right_box {
+    width: 80%;
+}
+.Reg_right_area input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+}
+
 /*return-to-top START CSS*/
 
 .back-to-top {
