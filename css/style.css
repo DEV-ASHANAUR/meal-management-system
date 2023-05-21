@@ -299,85 +299,6 @@ textarea:focus {
     }
 }
 
-/*Hamburger-menu START CSS*/
-
-.hamburger-menu {
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    display: none;
-    z-index: 999;
-    top: -15px;
-}
-
-.hamburger-menu span {
-    background: #847631;
-    width: 30px;
-    height: 3px;
-    display: block;
-    margin: 5px 0;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.hamburger-menu:hover .line-top {
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
-}
-
-.hamburger-menu:hover .line-bottom {
-    -webkit-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
-}
-
-.hamburger-menu .line-top.current {
-    -webkit-transform: translateY(200%) rotate(135deg);
-    -ms-transform: translateY(200%) rotate(135deg);
-    transform: translateY(200%) rotate(135deg);
-}
-
-.hamburger-menu .line-center.current {
-    opacity: 0;
-}
-
-.hamburger-menu .line-bottom.current {
-    -webkit-transform: translateY(-325%) rotate(-135deg);
-    -ms-transform: translateY(-325%) rotate(-135deg);
-    transform: translateY(-325%) rotate(-135deg);
-}
-
-/*ofcanvas-menu*/
-.ofcavas-menu {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    z-index: -1;
-    top: 0;
-    display: none;
-    left: -100%;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    text-align: center;
-}
-
-.ofcavas-menu.current {
-    left: 0;
-}
-
-.ofcavas-menu a {
-    color: #5f490c;
-    margin-top: 10px;
-}
-
-.ofcavas-menu ul {
-    margin-top: 70px;
-    line-height: 22px;
-}
 .Custom_btn {
     display: block;
     text-align: center;
@@ -393,36 +314,6 @@ textarea:focus {
 .Custom_btn:hover {
     /* opacity: 0.6; */
     box-shadow: 0 0 8px 0px #979797;
-}
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 70px;
-    line-height: 70px;
-    z-index: 1024;
-    width: 100%;
-    -webkit-transition: background 0.3s;
-    -o-transition: background 0.3s;
-    transition: background 0.3s;
-    background: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(24%, #faffa9),
-        to(#fff)
-    );
-    background: -o-linear-gradient(bottom, #faffa9 24%, #fff 100%);
-    background: linear-gradient(360deg, #faffa9 24%, #fff 100%);
-}
-
-/*sticky START CSS*/
-header.sticky {
-    -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Home_area  */
@@ -556,24 +447,4 @@ header.sticky {
 }
 .Name_div > div {
     width: 48%;
-}
-/*return-to-top START CSS*/
-
-.back-to-top {
-    font-size: 24px;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    border-radius: 50%;
-    background: #f2da55;
-    z-index: 1000;
-}
-
-.back-to-top i {
-    color: #fff;
 }

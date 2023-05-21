@@ -13,16 +13,6 @@
 }
 
 @media (max-width: 991px) {
-    #menu {
-        display: none;
-    }
-
-    .hamburger-menu {
-        display: block;
-    }
-    .ofcavas-menu {
-        display: block;
-    }
     .Reg_area_box h3 {
         font-size: 16px;
     }
