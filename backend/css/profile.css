@@ -1,0 +1,47 @@
+.profile {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user_box {
+    background-color: rgb(231, 231, 231);
+    width: 50%;
+    padding: 140px 0 40px 0;
+    position: relative;
+}
+
+.user_img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100px;
+    box-shadow: 0 0 2px 4px #fff;
+}
+.user_infomation {
+    text-align: center;
+}
+.user_infomation > div {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+.user_infomation span {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    padding-right: 20px;
+    width: 100px;
+}
+.user_infomation p {
+    color: #393939;
+    font-weight: 400;
+    font-size: 13px;
+    display: inline-block;
+}
