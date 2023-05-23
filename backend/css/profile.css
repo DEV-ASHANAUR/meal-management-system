@@ -19,7 +19,7 @@
     left: 50%;
     transform: translateX(-50%);
     top: -100px;
-    box-shadow: 0 0 2px 4px #fff;
+    box-shadow: 0 0 2px 4px #ffffff;
 }
 .user_infomation {
     text-align: center;

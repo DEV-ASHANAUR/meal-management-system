@@ -10,7 +10,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
 
-        <title>SB Admin 2 - Dashboard</title>
+        <title>Meal Manageent System</title>
 
         <!-- Custom fonts for this template-->
         <link
@@ -25,6 +25,7 @@
 
         <!-- Custom styles for this template-->
         <link href="css/main.css" rel="stylesheet" />
+        <link href="css/profile.css" rel="stylesheet" />
     </head>
 
     <body id="page-top">
@@ -50,7 +51,7 @@
                 <hr class="sidebar-divider my-0" />
 
                 <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></a
@@ -140,9 +141,9 @@
                 <div class="sidebar-heading">Addons</div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a
-                        class="nav-link collapsed"
+                        class="nav-link"
                         href="#"
                         data-toggle="collapse"
                         data-target="#collapsePages"
@@ -154,7 +155,7 @@
                     </a>
                     <div
                         id="collapsePages"
-                        class="collapse"
+                        class="collapse show"
                         aria-labelledby="headingPages"
                         data-parent="#accordionSidebar"
                     >
@@ -172,7 +173,7 @@
                             <a class="collapse-item" href="404.html"
                                 >404 Page</a
                             >
-                            <a class="collapse-item" href="blank.html"
+                            <a class="collapse-item active" href="blank.html"
                                 >Blank Page</a
                             >
                         </div>
@@ -565,248 +566,33 @@
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <!-- Page Heading -->
-                        <div
-                            class="d-sm-flex align-items-center justify-content-between mb-4"
-                        >
-                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                            <a
-                                href="#"
-                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                ><i
-                                    class="fas fa-download fa-sm text-white-50"
-                                ></i>
-                                Generate Report</a
-                            >
-                        </div>
-
-                        <!-- Content Row -->
-                        <div class="all_cost_area">
-                            <div class="row no-gutters">
-                                <!-- Earnings (Monthly) Card Example -->
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <div class="month_details_box p1">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
-                                        </div>
+                        <h1 class="h3 mb-4 text-gray-800">
+                            <div class="profile">
+                                <div class="user_box">
+                                    <div class="user_img">
+                                        <img
+                                            src="./img/undraw_profile.svg"
+                                            alt=""
+                                            class="img-fluid"
+                                        />
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <div class="month_details_box p2">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
+                                    <div class="user_infomation">
+                                        <div>
+                                            <span>Name :</span>
+                                            <p>Gisan Khan</p>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <div class="month_details_box p3">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
+                                        <div>
+                                            <span>Role :</span>
+                                            <p>Admin</p>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <div class="month_details_box p4">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-12">
-                                    <div class="month_details_box p5">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-12">
-                                    <div class="month_details_box p6">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-12">
-                                    <div class="month_details_box p7">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <div class="month_details_box p8">
-                                        <h4>Mess Balance</h4>
-                                        <div class="price">
-                                            <h3><span>5600</span>tk</h3>
-                                            <a href="#">View Details</a>
+                                        <div>
+                                            <span>gmail:</span>
+                                            <p>gisanKhanw348237@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Content Row -->
-
-                        <div class="row">
-                            <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
-                                    >
-                                        <h6
-                                            class="m-0 font-weight-bold text-primary"
-                                        >
-                                            Earnings Overview
-                                        </h6>
-                                        <div class="dropdown no-arrow">
-                                            <a
-                                                class="dropdown-toggle"
-                                                href="#"
-                                                role="button"
-                                                id="dropdownMenuLink"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                            >
-                                                <i
-                                                    class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"
-                                                ></i>
-                                            </a>
-                                            <div
-                                                class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                aria-labelledby="dropdownMenuLink"
-                                            >
-                                                <div class="dropdown-header">
-                                                    Dropdown Header:
-                                                </div>
-                                                <a
-                                                    class="dropdown-item"
-                                                    href="#"
-                                                    >Action</a
-                                                >
-                                                <a
-                                                    class="dropdown-item"
-                                                    href="#"
-                                                    >Another action</a
-                                                >
-                                                <div
-                                                    class="dropdown-divider"
-                                                ></div>
-                                                <a
-                                                    class="dropdown-item"
-                                                    href="#"
-                                                    >Something else here</a
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-area">
-                                            <canvas id="myAreaChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
-                                    >
-                                        <h6
-                                            class="m-0 font-weight-bold text-primary"
-                                        >
-                                            Revenue Sources
-                                        </h6>
-                                        <div class="dropdown no-arrow">
-                                            <a
-                                                class="dropdown-toggle"
-                                                href="#"
-                                                role="button"
-                                                id="dropdownMenuLink"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                            >
-                                                <i
-                                                    class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"
-                                                ></i>
-                                            </a>
-                                            <div
-                                                class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                aria-labelledby="dropdownMenuLink"
-                                            >
-                                                <div class="dropdown-header">
-                                                    Dropdown Header:
-                                                </div>
-                                                <a
-                                                    class="dropdown-item"
-                                                    href="#"
-                                                    >Action</a
-                                                >
-                                                <a
-                                                    class="dropdown-item"
-                                                    href="#"
-                                                    >Another action</a
-                                                >
-                                                <div
-                                                    class="dropdown-divider"
-                                                ></div>
-                                                <a
-                                                    class="dropdown-item"
-                                                    href="#"
-                                                    >Something else here</a
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-pie pt-4 pb-2">
-                                            <canvas id="myPieChart"></canvas>
-                                        </div>
-                                        <div class="mt-4 text-center small">
-                                            <span class="mr-2">
-                                                <i
-                                                    class="fas fa-circle text-primary"
-                                                ></i>
-                                                Direct
-                                            </span>
-                                            <span class="mr-2">
-                                                <i
-                                                    class="fas fa-circle text-success"
-                                                ></i>
-                                                Social
-                                            </span>
-                                            <span class="mr-2">
-                                                <i
-                                                    class="fas fa-circle text-info"
-                                                ></i>
-                                                Referral
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </h1>
                     </div>
                     <!-- /.container-fluid -->
                 </div>
@@ -888,12 +674,5 @@
 
         <!-- Custom scripts for all pages-->
         <script src="js/main.js"></script>
-
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
     </body>
 </html>
