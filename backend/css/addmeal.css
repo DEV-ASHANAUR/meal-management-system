@@ -81,6 +81,24 @@
 .add_meal_table td:nth-child(3) {
     text-align: center;
 }
+.counter {
+    display: inline-block;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+    white-space: nowrap;
+}
+.counter span {
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 5px 10px;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+.counter h5 {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 14px;
+}
 .meal_submit_area {
     padding: 10px;
     border-bottom: 1px solid #000000;
