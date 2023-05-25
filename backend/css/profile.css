@@ -6,20 +6,21 @@
 }
 .user_box {
     background-color: rgb(231, 231, 231);
-    width: 50%;
-    padding: 140px 0 40px 0;
+    width: 400px;
+    padding: 120px 0 40px 0;
     position: relative;
+    box-shadow: 0 0 0px 4px #ffffff;
 }
 
 .user_img {
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -100px;
-    box-shadow: 0 0 2px 4px #ffffff;
+    top: -70px;
+    box-shadow: 0 0 0px 4px #ffffff;
 }
 .user_infomation {
     text-align: center;
@@ -29,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 80px;
+    padding: 0 30px;
 }
 .user_infomation span {
     text-transform: uppercase;

@@ -365,14 +365,14 @@ textarea:focus {
     text-transform: capitalize;
 }
 .login_left_area {
-    height: calc(100vh - 200px);
+    min-height: 550px;
     background-image: url(../img/login_img.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .login_right_area {
-    height: calc(100vh - 200px);
+    min-height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -416,14 +416,14 @@ textarea:focus {
     text-transform: capitalize;
 }
 .Reg_left_area {
-    height: calc(100vh - 200px);
+    min-height: 550px;
     background-image: url(../img/login_img.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .Reg_right_area {
-    height: calc(100vh - 200px);
+    min-height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
