@@ -398,6 +398,7 @@ textarea:focus {
 
 .Reg_area,
 .login_area {
+    overflow: hidden;
     height: 100vh;
     display: flex;
     align-items: center;
