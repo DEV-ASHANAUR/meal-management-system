@@ -28,9 +28,6 @@
         font-size: 26px;
         color: #fff;
     }
-    .home_btn a {
-        margin: 20px 10px 0px 10px;
-    }
     .Reg_area_box {
         margin: 40px;
     }
@@ -48,5 +45,8 @@
     }
     .login_right_area h3 {
         font-size: 18px;
+    }
+    .home_bg h2 {
+        font-size: 35px;    
     }
 }
