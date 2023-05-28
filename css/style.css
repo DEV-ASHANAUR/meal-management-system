@@ -380,9 +380,8 @@ textarea:focus {
 }
 /* -- Login area  -- */
 .login_area_box {
-    margin: 100px;
-    box-shadow: 0px 0px 20px 0px #cfcfcf;
-    border-radius: 5px;
+    box-shadow: 4px 4px 10px 0px #000000;
+    border-radius: 12px;
     overflow: hidden;
     background-color: #fff;
     text-transform: capitalize;
@@ -407,16 +406,29 @@ textarea:focus {
 }
 .login_right_area input {
     width: 100%;
-    padding: 8px;
-    font-size: 14px;
+    padding: 8px 15px;
     margin: 10px 0;
-    border: 1px solid #000000;
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    font-size: 15px;
 }
 .Reg_google {
     background-color: red;
 }
 .login_right_area a {
-    font-size: 13px;
+    font-size: 14px;
+    text-transform: none;
+    color: #de0046;
+}
+.login_right_area a:hover{
+    text-decoration: underline;
+}
+.login_area_box .button{
+    width: 100%;
+    box-shadow: none;
+}
+.login_area_box .button:hover{
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
 }
 
 .Reg_area,
