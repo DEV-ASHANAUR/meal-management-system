@@ -29,9 +29,10 @@
                         <div class="login_right_area">
                             <div class="login_right_box">
                                 <h3 class="mb_30">Welcome Back</h3>
-                                <form>
-                                    <input type="email" placeholder="Email Address" />
-                                    <input type="password" placeholder="Password" />
+                                <form action="auth/login.php" method="POST">
+                                    <input type="email" name="email" placeholder="Email Address" />
+                                    <input type="password" name="password" placeholder="Password" />
+                                    <input type="hidden" name="submit" />
                                     <button class="button mt_10" type="submit">Login</button>
                                 </form>
         

@@ -50,12 +50,22 @@
         }
         //create user
         public function createUser($username,$useremail,$password,$usermobile,$messId){
-            $this->sql = "INSERT INTO `users`(`user_name`, `user_mobile`, `user_email`, `mess_id`) VALUES ('$username','$usermobile','$useremail','$messId')";
+            $this->sql = "INSERT INTO `users`(`user_name`,`user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES ('$username','monitor','$usermobile','$useremail','$password','$messId')";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return true;
             }else{
                 return false;
+            }
+        }
+        //retriveUser by email
+        public function retriveUser($email){
+            $this->sql = "SELECT * FROM `users` WHERE `user_email` = '$email'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                echo "error";
             }
         }
     }
