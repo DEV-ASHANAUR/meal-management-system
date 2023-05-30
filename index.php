@@ -20,38 +20,24 @@
         <!-- all css here -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+
         <link href="css/helper.css" rel="stylesheet" type="text/css" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link href="css/responsive.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="home_bg">
+        <!-- Preloader End -->
+        <div class="home_bg" style="background-image: url(img/home_img.png);">
             <div class="container">
-                <div class="login_area_box">
-                    <div class="row no-gutters">
-                        <div class="col-md-5">
-                            <div class="login_left_area"></div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="login_right_area">
-                                <div class="login_right_box">
-                                    <h3 class="mb_30">Welcome Back</h3>
-                                    <form>
-                                        <input type="email" placeholder="Email Address" />
-                                        <input type="password" placeholder="Password" />
-                                        <button class="button mt_10" type="submit">Login</button>
-                                    </form>
-            
-                                    <div class="mt_30">
-                                        <a href="register.html">Create an Account</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h2>Meal Management System</h2>
+                <div class="home_btn">
+                    <a href="login.html" class="button">Login</a>
+                    <a href="register.html" class="button">Create New Mess</a>
+                </div>            
             </div>
         </div>
+
+        <!-- all js here -->
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
