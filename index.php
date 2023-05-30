@@ -31,8 +31,8 @@
             <div class="container">
                 <h2>Meal Management System</h2>
                 <div class="home_btn">
-                    <a href="login.html" class="button">Login</a>
-                    <a href="register.html" class="button">Create New Mess</a>
+                    <a href="login.php" class="button">Login</a>
+                    <a href="register.php" class="button">Create New Mess</a>
                 </div>            
             </div>
         </div>

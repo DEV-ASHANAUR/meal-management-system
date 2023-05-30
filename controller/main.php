@@ -18,6 +18,46 @@
             }
             return $this->con;
         }
+        //isUserExist check
+        public function isUserExist($useremail){
+            $this->sql = "SELECT * FROM `users` WHERE `user_email` = '$useremail'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows>0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //isMessExist check
+        public function isMessExist($messname){
+            $this->sql = "SELECT * FROM `mess` WHERE `mess_name` = '$messname'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows>0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //create mess
+        public function createMess($messname){
+            $this->sql = "INSERT INTO `mess`(`mess_name`) VALUES ('$messname')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->con->insert_id;
+            }else{
+                return false;
+            }
+        }
+        //create user
+        public function createUser($username,$useremail,$password,$usermobile,$messId){
+            $this->sql = "INSERT INTO `users`(`user_name`, `user_mobile`, `user_email`, `mess_id`) VALUES ('$username','$usermobile','$useremail','$messId')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>

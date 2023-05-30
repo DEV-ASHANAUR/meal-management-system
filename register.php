@@ -30,20 +30,21 @@
                             <h3 class="mb_30">
                                 Create an Account!
                             </h3>
-                            <form>
+                            <form action="auth/create.php" method="POST">
                                 <div class="Name_div">
                                     <div>
-                                        <input type="text" placeholder="Your Name" />
+                                        <input type="text" name="user_name" placeholder="Your Name" />
                                     </div>
                                     <div>
-                                        <input type="text" placeholder="Mess Name" />
+                                        <input type="text" name="mess_name" placeholder="Mess Name" />
                                     </div>
                                 </div>
 
-                                <input type="email" placeholder="Email Address" />
-                                <input type="text" placeholder="Mobile" />
-                                <input type="password" placeholder="Password" />
-                                <button class="button mt_10" type="submit">
+                                <input type="email" name="user_email" placeholder="Email Address" />
+                                <input type="text" name="user_mobile" placeholder="Mobile" />
+                                <input type="password" name="password" placeholder="Password" />
+                                <input type="hidden" name="submit" />
+                                <button class="button mt_10"  type="submit">
                                     Register
                                 </button>
                             </form>

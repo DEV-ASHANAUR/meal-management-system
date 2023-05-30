@@ -1,3 +1,7 @@
+<?php
+    include "Flash_data.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
