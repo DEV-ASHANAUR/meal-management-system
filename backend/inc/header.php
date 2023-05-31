@@ -1,3 +1,10 @@
+<?php
+    include "controller/main.php";
+    include "Flash_data.php";
+    if(!isset($_SESSION['user_id'])){
+        header('location:../login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +17,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
 
-        <title>SB Admin 2 - Dashboard</title>
+        <title><?php echo $page_title; ?></title>
 
         <!-- Custom fonts for this template-->
         <link
@@ -56,7 +63,7 @@
                 <hr class="sidebar-divider my-0" />
 
                 <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
+                <li class="nav-item <?php if($page == 'dashboard'){echo 'active';}?>">
                     <a class="nav-link" href="index.php">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></a
@@ -84,12 +91,12 @@
                     </a>
                     <div
                         id="collapseMess"
-                        class="collapse"
+                        class="collapse <?php if($page == 'manage_mess'){echo 'show';}?>"
                         aria-labelledby="headingTwo"
                         data-parent="#accordionSidebar"
                     >
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="view-mess.php"
+                            <a class="collapse-item <?php if($sub_page == 'view_mess'){echo 'active';}?>" href="view-mess.php"
                                 >View Mess</a
                             >
                         </div>

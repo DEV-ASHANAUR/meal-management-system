@@ -1,4 +1,20 @@
-<?php include "inc/header.php"; ?>
+<?php 
+    session_start();
+    $page = 'manage_mess';
+    $sub_page = 'view_mess';
+    $page_title = 'Dashboard - view Mess';
+    include "inc/header.php"; 
+    $obj = new Main();
+    $messId = $_SESSION['mess_id'];
+    $data = $obj->viewMessById($messId);
+    if($data->num_rows > 0){
+        while($row = $data->fetch_object()){
+            $messName = $row->mess_name;
+            $messAdd = $row->mess_address;
+            $messType = $row->mess_type;
+        }
+    }
+?>
 
 <!-- End of Topbar -->
 <!-- Begin Page Content -->
@@ -23,18 +39,17 @@
                 <div class="user_infomation">
                     <div>
                         <span>Mess Name :</span>
-                        <p>Gisan Khan</p>
+                        <p class="text-capitalize"><?php echo $messName; ?></p>
                     </div>
                     <div>
                         <span>Mess Type :</span>
-                        <p>Boys</p>
+                        <p class="text-capitalize"><?php if($messType === null){echo "Not Set";}else{echo $messType;} ?></p>
                     </div>
                     <div>
                         <span>Mess Address :</span>
-                        <p>Dhaka</p>
+                        <p class="text-capitalize"><?php if($messAdd === ""){echo "Not Set";}else{echo $messAdd;} ?></p>
                     </div>
-                    <a href="mess-edit.php" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                    <div></div>
+                    <div><a href="edit-mess.php?mess-id=<?php echo $messId;?>" class="btn btn-primary"><i class="fas fa-edit"></i></a></div>
                 </div>
             </div>
         </div>

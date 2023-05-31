@@ -1,5 +1,10 @@
 <?php
+
     include "Flash_data.php";
+    if(isset($_SESSION['user_id'])){
+        header('location:backend/index.php');
+    }
+    // echo $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>

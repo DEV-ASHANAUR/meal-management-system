@@ -27,10 +27,13 @@
 } */
 .user_infomation > div {
     list-style: none;
-    /* display: flex; */
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.user_infomation > div:last-child{
+    border-bottom: none;
 }
 .user_infomation span {
     text-transform: uppercase;
@@ -38,12 +41,13 @@
     font-weight: 700;
     color: #000000;
     padding-right: 20px;
-    width: 100px;
+    width: 146px;
+    flex-shrink: 0;
 }
 .user_infomation p {
     color: #393939;
     font-weight: 400;
     font-size: 16px;
     display: inline-block;
-    margin: 5px 0;
+    margin: 0px 0;
 }
