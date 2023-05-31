@@ -37,7 +37,11 @@
             href="vendor/datatables/dataTables.bootstrap4.min.css"
             rel="stylesheet"
         />
+        
         <link href="css/profile.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/toastr.css">
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="js/toastr.min.js"></script>
     </head>
 
     <body id="page-top">

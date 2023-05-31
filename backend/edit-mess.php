@@ -39,6 +39,25 @@
             <form action="action/mess/edit.php" method="POST">
                 <div class="container">
                     <div class="row">
+                            
+                        <?php
+                            if(isset($_SESSION['msg']['addsuccesss'])){
+                                ?>
+                            <script type="text/javascript">
+                            toastr.success("<?php echo Flass_data::show_error();?>");
+                            </script>
+                            <?php 
+                                }
+                            ?>
+                            <?php
+                            if(isset($_SESSION['msg']['add_error'])){
+                                ?>
+                            <script type="text/javascript">
+                            toastr.error("<?php echo Flass_data::show_error();?>");
+                            </script>
+                            <?php 
+                            }
+                        ?>
                         <div class="col-md-6 col-sm-12 m-auto">
                             <div class="card mt-4">
                                 <div class="card-header">

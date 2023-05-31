@@ -14,7 +14,7 @@
         $isMess = $obj->isMessExist($messname,$messId);
         // echo $isMess;
         if($isMess === true){
-            Flass_data::auth('Mess name already exist!');
+            Flass_data::addError('Mess name already exist!');
             header("location:../../edit-mess.php"); 
             exit();
         }
@@ -22,12 +22,12 @@
         $status = $obj->editMess($messId,$messname,$messtype,$messaddress);
         echo $status;
         if($status === true){
-            Flass_data::auth('Edit Success!');
+            Flass_data::addsuccess('Edit Success!');
             header("location:../../edit-mess.php"); 
             exit();
         }
         else{
-            Flass_data::auth('Something went wrong!');
+            Flass_data::addError('Something went wrong!');
             header("location:../../edit-mess.php"); 
             exit();
         }
