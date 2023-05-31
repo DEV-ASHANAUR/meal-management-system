@@ -30,6 +30,7 @@
             href="vendor/datatables/dataTables.bootstrap4.min.css"
             rel="stylesheet"
         />
+        <link href="css/profile.css" rel="stylesheet" />
     </head>
 
     <body id="page-top">
@@ -69,6 +70,31 @@
                 <div class="sidebar-heading">Interface</div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a
+                        class="nav-link collapsed"
+                        href="#"
+                        data-toggle="collapse"
+                        data-target="#collapseMess"
+                        aria-expanded="true"
+                        aria-controls="collapseMess"
+                    >
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Manage Mess</span>
+                    </a>
+                    <div
+                        id="collapseMess"
+                        class="collapse"
+                        aria-labelledby="headingTwo"
+                        data-parent="#accordionSidebar"
+                    >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="view-mess.php"
+                                >View Mess</a
+                            >
+                        </div>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a
                         class="nav-link collapsed"

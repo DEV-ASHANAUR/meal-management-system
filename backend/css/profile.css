@@ -22,12 +22,12 @@
     top: -70px;
     box-shadow: 0 0 0px 4px #ffffff;
 }
-.user_infomation {
+/* .user_infomation {
     text-align: center;
-}
+} */
 .user_infomation > div {
     list-style: none;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
@@ -43,7 +43,7 @@
 .user_infomation p {
     color: #393939;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 16px;
     display: inline-block;
     margin: 5px 0;
 }
