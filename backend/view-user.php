@@ -65,7 +65,7 @@
                             <td><?php echo $row->user_mobile; ?></td>
                             <td><?php echo $row->user_email; ?></td>
                             <td>
-                                <a class="btn btn-primary" href="#"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-primary" href="add-user.php?user-id=<?php echo $row->user_id; ?>"><i class="fas fa-edit"></i></a>
                                 <a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>

@@ -78,6 +78,46 @@
                 return false;
             }
         }
+        //retriveUserbyid
+        public function retriveUserbyid($user_id){
+            $this->sql = "SELECT * FROM `users` WHERE `user_id` = '$user_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //check any other same to me or not
+        public function retrivewithoutme($id,$email){
+            $this->sql = "SELECT * FROM `users` WHERE `user_id` != '$id' AND `user_email` = '$email'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                echo "error";
+            }
+        }
+        //update user
+        public function updateUser($id,$user_name,$user_email,$user_role,$password,$user_mobile){
+            $this->sql = "UPDATE `users` SET `user_name`='$user_name',`user_role`='$user_role',`user_mobile`='$user_mobile',`user_email`='$user_email',`user_password`='$password' WHERE `user_id` = '$id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //user update without password
+        public function updateUserwithoutpass($id,$user_name,$user_email,$user_role,$user_mobile){
+            $this->sql = "UPDATE `users` SET `user_name`='$user_name',`user_role`='$user_role',`user_mobile`='$user_mobile',`user_email`='$user_email' WHERE `user_id` = '$id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>
