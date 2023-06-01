@@ -50,7 +50,7 @@
         }
         //create user
         public function createUser($username,$useremail,$password,$usermobile,$messId){
-            $this->sql = "INSERT INTO `users`(`user_name`,`user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES ('$username','monitor','$usermobile','$useremail','$password','$messId')";
+            $this->sql = "INSERT INTO `users`(`user_name`,`user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES ('$username','Monitor','$usermobile','$useremail','$password','$messId')";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return true;

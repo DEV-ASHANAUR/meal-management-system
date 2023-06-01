@@ -120,15 +120,15 @@
                     </a>
                     <div
                         id="collapseTwo"
-                        class="collapse"
+                        class="collapse <?php if($page == 'manage_user'){echo 'show';}?>"
                         aria-labelledby="headingTwo"
                         data-parent="#accordionSidebar"
                     >
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="add-user.php"
+                            <a class="collapse-item <?php if($sub_page == 'add_user'){echo 'active';}?>" href="add-user.php"
                                 >Add User</a
                             >
-                            <a class="collapse-item" href="view-user.php">View User</a>
+                            <a class="collapse-item <?php if($sub_page == 'view_user'){echo 'active';}?>" href="view-user.php">View User</a>
                         </div>
                     </div>
                 </li>

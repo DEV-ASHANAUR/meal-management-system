@@ -6,14 +6,6 @@
     include "inc/header.php"; 
     $obj = new Main();
     $messId = $_SESSION['mess_id'];
-    $data = $obj->viewMessById($messId);
-    if($data->num_rows > 0){
-        while($row = $data->fetch_object()){
-            $messName = $row->mess_name;
-            $messAdd = $row->mess_address;
-            $messType = $row->mess_type;
-        }
-    }
 ?>
 
 <!-- End of Topbar -->
@@ -36,9 +28,27 @@
                         class="fas fa-list mr-1"></i>View User</a></small>
         </div>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="action/user/insert.php" method="post">
                 <div class="container">
                     <div class="row">
+                    <?php
+                            if(isset($_SESSION['msg']['addsuccesss'])){
+                                ?>
+                            <script type="text/javascript">
+                            toastr.success("<?php echo Flass_data::show_error();?>");
+                            </script>
+                            <?php 
+                                }
+                            ?>
+                            <?php
+                            if(isset($_SESSION['msg']['add_error'])){
+                                ?>
+                            <script type="text/javascript">
+                            toastr.error("<?php echo Flass_data::show_error();?>");
+                            </script>
+                            <?php 
+                            }
+                        ?>
                         <div class="col-md-6 col-sm-12 m-auto">
                             <div class="card mt-4">
                                 <div class="card-header">
@@ -48,32 +58,36 @@
                                     <div class="card-body">
                                         <div class="mb-3">
                                             <label for="date">User Name</label>
-                                            <input type="text" class="form-control mb-2" name="username" value=""
+                                            <input type="text" class="form-control mb-2" name="user_name"
                                                 placeholder="Full Name">
                                         </div>
                                         <div class="mb-3">
                                             <label for="category_id">Select role</label>
-                                            <select class="form-control" name="name" id="user_id">
+                                            <select class="form-control" name="user_role" id="user_role" required />
                                                 <option value="">Select Name</option>
-                                                <option value="">Manager</option>
-                                                <option value="">Member</option>
+                                                <option value="Monitor">Monitor</option>
+                                                <option value="Manager">Manager</option>
+                                                <option value="Member">Member</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="date">User Email</label>
-                                            <input type="Email" class="form-control mb-2" name="useremail" value=""
-                                                placeholder="Email">
+                                            <label for="email">User Email</label>
+                                            <input type="email" class="form-control mb-2" name="user_email"
+                                                placeholder="Email" required />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="date">User Mobile</label>
-                                            <input type="Email" class="form-control mb-2" name="usermobile" value=""
-                                                placeholder="Mobile">
+                                            <label for="mobile">User Mobile</label>
+                                            <input type="text" class="form-control mb-2" name="user_mobile"
+                                                placeholder="Mobile" required />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="date">User Password</label>
-                                            <input type="password" class="form-control mb-2" name="password" value=""
-                                                placeholder="password">
+                                            <label for="password">User Password</label>
+                                            <input type="password" class="form-control mb-2" name="password"
+                                                placeholder="password" required />
                                         </div>
+                                        <input type="hidden" name="submit" />
+                                        <input type="hidden" name="mess_id" value="<?php echo $messId;?>" />
+
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Submit</button>

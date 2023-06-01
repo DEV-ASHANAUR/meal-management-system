@@ -48,6 +48,36 @@
                 return false;
             }
         }
+        //isUserExist check
+        public function isUserExist($useremail){
+            $this->sql = "SELECT * FROM `users` WHERE `user_email` = '$useremail'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows>0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //create user
+        public function createUser($user_name,$user_role,$user_email,$user_mobile,$messId,$password){
+            $this->sql = "INSERT INTO `users`(`user_name`,`user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES ('$user_name','$user_role','$user_mobile','$user_email','$password','$messId')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //get all user by mess id
+        public function getAllUser($messId){
+            $this->sql = "SELECT * FROM `users` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>
