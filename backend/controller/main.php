@@ -137,6 +137,17 @@
                 return false;
             }
         }
+        //getMealByGroupOfDate -
+        //get regular meal list by mess id
+        public function getMealByGroupOfDate($messId){
+            $this->sql = "SELECT sum(meal) as total,`meal_date` FROM `meals` WHERE `mess_id` = '$messId' GROUP BY `meal_date`";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                echo "error";
+            }
+        }
     }
 
 ?>
