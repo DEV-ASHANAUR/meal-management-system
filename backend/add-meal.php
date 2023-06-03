@@ -5,8 +5,12 @@
     $page_title = 'Dashboard - Add meal';
     include "inc/header.php"; 
     $obj = new Main();
-    $messId = $_SESSION['mess_id'];
 
+    $today = date('Y-m-d');
+
+    $messId = $_SESSION['mess_id'];
+    $created_by = $_SESSION['user_id'];
+    $members = $obj->getAllUser($messId);
     $shuter = false;
     if(isset($_GET['user-id'])){
         $shuter = true;
@@ -81,7 +85,7 @@
                             }
                         ?>
                     <div class="col-md-8 col-sm-12 m-auto">
-                        <form action="">
+                        <form action="action/meal/insert.php" method="POST">
                             <table class="table table-bordered">
                                 <thead class="bg-info text-white">
                                     <tr>
@@ -91,25 +95,40 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                        if($members->num_rows>0){
+                                            $si = 1;
+                                            while($row = $members->fetch_object()){
+                                                ?>
                                     <tr>
-                                        <th>1</th>
-                                        <th>
-                                            Md Ashanaur Rahman
-                                            <!-- <input type="hidden" name="user_id[]" value="{{ $user->id }}"> -->
+                                        <th><?php echo $si; ?></th>
+                                        <th class="text-capitalize">
+                                            <?php echo $row->user_name; ?>
+                                            <input type="hidden" name="user_id[]" value="<?php echo $row->user_id; ?>">
+                                            <input type="hidden" name="created_by" value="<?php echo $created_by; ?>">
+                                            <input type="hidden" name="mess_id" value="<?php echo $messId; ?>">
                                         </th>
                                         <th class="text-center" style="width: 200px">
                                             <input class="spiner" name="meal[]" type="number" value="0" min="0" max="50"
                                                 step="0.5" data-decimals="1">
                                         </th>
                                     </tr>
+                                    <?php
+                                            $si++;
+                                            }
+                                        }
+                                    ?>
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <td colspan="2">
-                                            <input type="date" name="date" class="form-control" value="{{ $date }}" />
+                                            <input type="date" name="date" class="form-control"
+                                                value="<?php echo $today;?>" />
+                                            <input type="hidden" name="submit">
                                         </td>
                                         <td class="text-right">
-                                            <button class="btn btn-success w-100 d-block">Submit</button>
+                                            <button class="btn btn-success w-100 d-block" type="submit">Submit</button>
                                         </td>
                                     </tr>
                                 </tfoot>

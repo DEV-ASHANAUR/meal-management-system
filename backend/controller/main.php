@@ -118,6 +118,25 @@
                 return false;
             }
         }
+        public function isMealExist($date,$mess_id){
+            $this->sql = "SELECT * FROM `meals` WHERE `mess_id` = '$mess_id' AND `meal_date` = '$date'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows>0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //createMeal
+        public function createMeal($user_id,$meal,$created_by,$mess_id,$date){
+            $this->sql = "INSERT INTO `meals`(`user_id`, `mess_id`, `meal`, `meal_date`, `created_by`) VALUES ('$user_id','$mess_id','$meal','$date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>
