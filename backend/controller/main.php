@@ -137,10 +137,30 @@
                 return false;
             }
         }
+        //update meal
+        public function updateMeal($user_id,$meal,$created_by,$mess_id,$date){
+            $this->sql = "UPDATE `meals` SET `meal`='$meal',`created_by`='$created_by' WHERE `user_id` = '$user_id' AND `mess_id` = '$mess_id' AND `meal_date` = '$date'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
         //getMealByGroupOfDate -
         //get regular meal list by mess id
         public function getMealByGroupOfDate($messId){
             $this->sql = "SELECT sum(meal) as total,`meal_date` FROM `meals` WHERE `mess_id` = '$messId' GROUP BY `meal_date`";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                echo "error";
+            }
+        }
+        //get meal for view and edit 
+        public function getMealByDate($messId,$date){
+            $this->sql = "SELECT meals.*,users.user_name as username FROM meals INNER JOIN users ON users.user_id = meals.user_id WHERE meals.mess_id = '$messId' AND meals.meal_date = '$date'";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return $this->result;
