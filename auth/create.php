@@ -31,10 +31,18 @@
         //create mess
         $messId = $obj->createMess($messname);
         if($messId > 0){
-            $status = $obj->createUser($username,$useremail,md5($password),$usermobile,$messId);
-            if($status === true){
-                Flass_data::auth('Success - please Login!');
-                header("location:../login.php"); 
+            $userId = $obj->createUser($username,$useremail,md5($password),$usermobile,$messId);
+            if($userId > 0){
+                $today = date('Y-m-d');
+                $status = $obj->start_month($today,$messId,$userId);
+                if($status === true){
+                    Flass_data::auth('Success - please Login!');
+                    header("location:../login.php"); 
+                    exit();
+                }
+            }else{
+                Flass_data::auth('Something went wrong!');
+                header("location:../register.php"); 
                 exit();
             }
         }else{

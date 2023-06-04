@@ -53,7 +53,7 @@
             $this->sql = "INSERT INTO `users`(`user_name`,`user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES ('$username','Monitor','$usermobile','$useremail','$password','$messId')";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
-                return true;
+                return $this->con->insert_id;
             }else{
                 return false;
             }
@@ -66,6 +66,16 @@
                 return $this->result;
             }else{
                 echo "error";
+            }
+        }
+        //start a new month
+        public function start_month($start_date,$messId,$created_by){
+            $this->sql = "INSERT INTO `month_details`(`mess_id`, `start_date`, `created_by`) VALUES ('$messId','$start_date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
             }
         }
     }

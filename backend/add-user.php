@@ -99,7 +99,7 @@
                                     <div class="mb-3">
                                         <label for="category_id">Select role</label>
                                         <select class="form-control" name="user_role" id="user_role" required />
-                                        <option value="">Select Name</option>
+                                        <option value="">Select Role</option>
                                         <option <?php if($user_role == "Monitor"){echo "selected";} ?> value="Monitor">
                                             Monitor</option>
                                         <option <?php if($user_role == "Manager"){echo "selected";} ?> value="Manager">
@@ -183,7 +183,7 @@
                                     <div class="mb-3">
                                         <label for="category_id">Select role</label>
                                         <select class="form-control" name="user_role" id="user_role" required />
-                                        <option value="">Select Name</option>
+                                        <option value="">Select Role</option>
                                         <option value="Monitor">Monitor</option>
                                         <option value="Manager">Manager</option>
                                         <option value="Member">Member</option>
