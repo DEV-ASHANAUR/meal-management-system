@@ -178,9 +178,29 @@
                 return false;
             }
         }
+        //update bazer
+        public function updateBazer($bazer_id,$user_id,$bazer_date,$bazer_amount,$bazer_description,$messId,$created_by){
+            $this->sql = "UPDATE `bazer_cost` SET `user_id`='$user_id',`mess_id`='$messId',`bazer_amount`='$bazer_amount',`bazer_description`='$bazer_description',`bazer_date`='$bazer_date',`created_by`='$created_by' WHERE `bazer_id` = '$bazer_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
         //getBazer
         public function getBazer($messId){
             $this->sql = "SELECT bazer_cost.*,users.user_name as user_name FROM bazer_cost INNER JOIN users ON users.user_id = bazer_cost.user_id WHERE bazer_cost.mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //retriveBazerbyid
+        public function retriveBazerbyid($bazerId){
+            $this->sql = "SELECT * FROM bazer_cost  WHERE bazer_id = '$bazerId'";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return $this->result;
