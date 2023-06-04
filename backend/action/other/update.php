@@ -7,24 +7,23 @@
 
     if(isset($_POST['submit'])){
         $user_id = $_POST['user_id'];
-        $bazer_id = $_POST['bazer_id'];
+        $other_id = $_POST['other_id'];
         $created_by = $_POST['created_by'];
-        $bazer_date = $_POST['bazer_date'];
-        $bazer_amount = $_POST["bazer_amount"];
-        $bazer_description = addslashes($_POST['bazer_description']);
+        $other_date = $_POST['other_date'];
+        $other_amount = $_POST["other_amount"];
+        $other_description = addslashes($_POST['other_description']);
         $messId = $_POST['mess_id'];
 
         //create mess
-        $status = $obj->updateBazer($bazer_id,$user_id,$bazer_date,$bazer_amount,$bazer_description,$messId,$created_by);
-        echo $status;
+        $status = $obj->updateOtherCost($other_id,$user_id,$other_date,$other_amount,$other_description,$messId,$created_by);
         if($status === true){
-            Flass_data::addsuccess('Bazer Edit Successfully!');
-            header("location:../../add-bazer.php?bazer-id=$bazer_id"); 
+            Flass_data::addsuccess('Other Cost Edit Successfully!');
+            header("location:../../add-other.php?other-id=$other_id"); 
             exit();
         }
         else{
             Flass_data::addError('Something went wrong!');
-            header("location:../../add-bazer.php?bazer-id=$bazer_id"); 
+            header("location:../../add-other.php?other-id=$other_id"); 
             exit();
         }
         

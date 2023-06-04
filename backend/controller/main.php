@@ -198,12 +198,51 @@
                 return false;
             }
         }
+        public function getOtherCost($messId){
+            $this->sql = "SELECT other_cost.*,users.user_name as user_name FROM other_cost INNER JOIN users ON users.user_id = other_cost.user_id WHERE other_cost.mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
         //retriveBazerbyid
         public function retriveBazerbyid($bazerId){
             $this->sql = "SELECT * FROM bazer_cost  WHERE bazer_id = '$bazerId'";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //add other
+        public function addOther($user_id,$other_date,$other_amount,$other_description,$messId,$created_by){
+            $this->sql = "INSERT INTO `other_cost`(`other_amount`, `user_id`, `mess_id`, `other_description`, `other_date`, `created_by`) VALUES ('$other_amount','$user_id','$messId','$other_description','$other_date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //retriveOtherbyid
+        public function retriveOtherbyid($other_id){
+            $this->sql = "SELECT * FROM other_cost  WHERE other_id = '$other_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //update other cost
+        public function updateOtherCost($other_id,$user_id,$other_date,$other_amount,$other_description,$messId,$created_by){
+            $this->sql = "UPDATE `other_cost` SET `other_amount`='$other_amount',`user_id`='$user_id',`mess_id`='$messId',`other_description`='$other_description',`other_date`='$other_date',`created_by`='$created_by' WHERE `other_id` = '$other_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
             }else{
                 return false;
             }

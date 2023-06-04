@@ -14,7 +14,7 @@
         $messId = $_POST['mess_id'];
 
         //create mess
-        $status = $obj->addBazer($user_id,$bazer_date,$bazer_amount,$bazer_description,$messId,$messId,$created_by);
+        $status = $obj->addBazer($user_id,$bazer_date,$bazer_amount,$bazer_description,$messId,$created_by);
         echo $status;
         if($status === true){
             Flass_data::addsuccess('Bazer Added Successfully!');

@@ -124,8 +124,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item <?php if($sub_page == 'view_bazer'){echo 'active';}?>"
                             href="view-bazer.php">Bazer Cost</a>
-                        <a class="collapse-item <?php if($sub_page == 'view_other'){echo 'active';}?>"
-                            href="other-cost.php">Others Cost</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_others'){echo 'active';}?>"
+                            href="view-others.php">Others Cost</a>
                     </div>
                 </div>
             </li>
