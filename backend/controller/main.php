@@ -287,6 +287,97 @@
                 return false;
             }
         }
+        /**
+         * caluculate total deposit
+         */
+        public function total_deposit($messId){
+            $this->sql = "SELECT SUM(money) as total_deposit FROM `member_money` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows> 0 ){
+                $row = $this->result->fetch_object();
+                return $row->total_deposit;
+            }else{
+                return 0;
+            }
+        }
+        /**
+         * caluculate Bazer cost
+         */
+        public function total_bazer($messId){
+            $this->sql = "SELECT SUM(bazer_amount) as total_bazer FROM `bazer_cost` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows> 0 ){
+                $row = $this->result->fetch_object();
+                return $row->total_bazer;
+            }else{
+                return 0;
+            }
+        }
+        /**
+         * caluculate others cost
+         */
+        public function total_others_cost($messId){
+            $this->sql = "SELECT SUM(other_amount) as total FROM `other_cost` WHERE mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows> 0 ){
+                $row = $this->result->fetch_object();
+                return $row->total;
+            }else{
+                return 0;
+            }
+        }
+        /**
+         * caluculate toatl meal
+         */
+        public function total_meal($messId){
+            $this->sql = "SELECT SUM(meal) as total FROM `meals` WHERE mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows> 0 ){
+                $row = $this->result->fetch_object();
+                return $row->total;
+            }else{
+                return 0;
+            }
+        }
+        /**
+         * caluculate toatl member
+         */
+        public function total_member($messId){
+            $this->sql = "SELECT COUNT(*) as total FROM `users` WHERE mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result->num_rows > 0 ){
+                $row = $this->result->fetch_object();
+                return $row->total;
+            }else{
+                return 0;
+            }
+        }
+        /**
+         * get member deposit
+         */
+        public function member_deposit($messId){
+            $this->sql = "SELECT SUM(member_money.money) as total, users.user_name as user_name,users.user_id FROM `member_money` INNER JOIN users ON users.user_id = member_money.user_id WHERE member_money.mess_id = '$messId' GROUP BY users.user_id";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        /**
+         * get member wise total meal
+         */
+        public function member_meal($messId){
+            $this->sql = "SELECT SUM(meals.meal) as total, users.user_name as user_name,users.user_id FROM `meals` INNER JOIN users ON users.user_id = meals.user_id WHERE meals.mess_id = '$messId' GROUP BY users.user_id;";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+
+
     }
 
 ?>

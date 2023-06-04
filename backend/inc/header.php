@@ -150,10 +150,10 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Present Month</span>
                 </a>
-                <div id="collapsePresentMonth" class="collapse" aria-labelledby="headingUtilities"
+                <div id="collapsePresentMonth" class="collapse <?php if($page == 'manage_member_details'){echo 'show';}?>" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="bazer-cost.php">Member Details</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_member_details'){echo 'active';}?>" href="member-details.php">Member Details</a>
                     </div>
                 </div>
             </li>
