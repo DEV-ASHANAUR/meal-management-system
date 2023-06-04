@@ -119,11 +119,13 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Manage Cost</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse <?php if($page == 'manage_bazer'){echo 'show';}?>"
+                    aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="bazer-cost.php">Bazer Cost</a>
-                        <a class="collapse-item" href="bazer-cost.php">Others Cost</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_bazer'){echo 'active';}?>"
+                            href="view-bazer.php">Bazer Cost</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_other'){echo 'active';}?>"
+                            href="other-cost.php">Others Cost</a>
                     </div>
                 </div>
             </li>
