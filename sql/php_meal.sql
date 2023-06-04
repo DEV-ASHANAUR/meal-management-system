@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 02:56 AM
+-- Generation Time: Jun 04, 2023 at 09:59 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `php_meal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bazer_cost`
+--
+
+CREATE TABLE `bazer_cost` (
+  `bazer_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `mess_id` int(11) DEFAULT NULL,
+  `bazer_amount` int(11) DEFAULT NULL,
+  `bazer_description` longtext DEFAULT NULL,
+  `bazer_date` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bazer_cost`
+--
+
+INSERT INTO `bazer_cost` (`bazer_id`, `user_id`, `mess_id`, `bazer_amount`, `bazer_description`, `bazer_date`, `created_by`, `created_at`) VALUES
+(1, 6, 8, 700, 'chicken,rui fish', '2023-06-04', 6, '2023-06-05 01:57:48');
 
 -- --------------------------------------------------------
 
@@ -42,12 +66,34 @@ CREATE TABLE `meals` (
 --
 
 INSERT INTO `meals` (`meal_id`, `user_id`, `mess_id`, `meal`, `meal_date`, `created_by`, `created_at`) VALUES
-(1, 1, 5, 2, '2023-06-04', 1, '2023-06-04 06:43:37'),
-(2, 2, 5, 3.5, '2023-06-04', 1, '2023-06-04 06:43:37'),
-(3, 3, 5, 2, '2023-06-04', 1, '2023-06-04 06:43:37'),
-(4, 1, 5, 2.5, '2023-06-05', 1, '2023-06-04 06:52:56'),
-(5, 2, 5, 1.5, '2023-06-05', 1, '2023-06-04 06:52:56'),
-(6, 3, 5, 2, '2023-06-05', 1, '2023-06-04 06:52:56');
+(1, 6, 8, 1.5, '2023-06-04', 6, '2023-06-05 01:56:22'),
+(2, 7, 8, 2.5, '2023-06-04', 6, '2023-06-05 01:56:22'),
+(3, 6, 8, 2.5, '2023-06-05', 6, '2023-06-05 01:57:10'),
+(4, 7, 8, 2.5, '2023-06-05', 6, '2023-06-05 01:57:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_money`
+--
+
+CREATE TABLE `member_money` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `mess_id` int(11) DEFAULT NULL,
+  `money` double NOT NULL,
+  `pay_date` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `member_money`
+--
+
+INSERT INTO `member_money` (`id`, `user_id`, `mess_id`, `money`, `pay_date`, `created_by`, `created_at`) VALUES
+(1, 6, 8, 2000, '2023-06-04', 6, '2023-06-05 01:58:19'),
+(2, 7, 8, 2000, '2023-06-04', 6, '2023-06-05 01:58:27');
 
 -- --------------------------------------------------------
 
@@ -68,7 +114,55 @@ CREATE TABLE `mess` (
 --
 
 INSERT INTO `mess` (`mess_id`, `mess_name`, `mess_address`, `mess_type`, `mess_createdAt`) VALUES
-(5, 'Bachelor', 'Dhaka, Mirpur-11', 'Boys', '2023-05-31 00:47:37');
+(8, 'Team8', 'Dhaka,Mirpur-11', 'Boys', '2023-06-05 01:53:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `month_details`
+--
+
+CREATE TABLE `month_details` (
+  `month_id` int(11) NOT NULL,
+  `mess_id` int(11) DEFAULT NULL,
+  `month_name` varchar(255) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `status` int(11) DEFAULT 0 COMMENT 'complete = 1',
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `month_details`
+--
+
+INSERT INTO `month_details` (`month_id`, `mess_id`, `month_name`, `start_date`, `end_date`, `status`, `created_by`, `created_at`) VALUES
+(1, 8, NULL, '2023-06-04', NULL, 0, 6, '2023-06-05 01:53:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `other_cost`
+--
+
+CREATE TABLE `other_cost` (
+  `other_id` int(11) NOT NULL,
+  `other_amount` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `mess_id` int(11) DEFAULT NULL,
+  `other_description` longtext DEFAULT NULL,
+  `other_date` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `other_cost`
+--
+
+INSERT INTO `other_cost` (`other_id`, `other_amount`, `user_id`, `mess_id`, `other_description`, `other_date`, `created_by`, `created_at`) VALUES
+(1, 500, 6, 8, 'gas', '2023-06-04', 6, '2023-06-05 01:58:05');
 
 -- --------------------------------------------------------
 
@@ -91,13 +185,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES
-(1, 'Md.Ashanaur Rahman', 'Monitor', '01866936562', 'ashanour009@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 5),
-(2, 'Md Rasel ahamed', 'Member', '01866936587', 'rasel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 5),
-(3, 'dami', 'Manager', '01866936562', 'dami@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 5);
+(6, 'Md.Ashanaur Rahman', 'Monitor', '01866936562', 'ashanour009@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8),
+(7, 'Md Rasel ahamed', 'Manager', '01866936587', 'rasel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bazer_cost`
+--
+ALTER TABLE `bazer_cost`
+  ADD PRIMARY KEY (`bazer_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `mess_id` (`mess_id`);
 
 --
 -- Indexes for table `meals`
@@ -108,10 +209,33 @@ ALTER TABLE `meals`
   ADD KEY `mess_id` (`mess_id`);
 
 --
+-- Indexes for table `member_money`
+--
+ALTER TABLE `member_money`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `mess_id` (`mess_id`);
+
+--
 -- Indexes for table `mess`
 --
 ALTER TABLE `mess`
   ADD PRIMARY KEY (`mess_id`);
+
+--
+-- Indexes for table `month_details`
+--
+ALTER TABLE `month_details`
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `mess_id` (`mess_id`);
+
+--
+-- Indexes for table `other_cost`
+--
+ALTER TABLE `other_cost`
+  ADD PRIMARY KEY (`other_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `mess_id` (`mess_id`);
 
 --
 -- Indexes for table `users`
@@ -125,26 +249,57 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bazer_cost`
+--
+ALTER TABLE `bazer_cost`
+  MODIFY `bazer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `member_money`
+--
+ALTER TABLE `member_money`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `mess`
 --
 ALTER TABLE `mess`
-  MODIFY `mess_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `mess_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `month_details`
+--
+ALTER TABLE `month_details`
+  MODIFY `month_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `other_cost`
+--
+ALTER TABLE `other_cost`
+  MODIFY `other_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `bazer_cost`
+--
+ALTER TABLE `bazer_cost`
+  ADD CONSTRAINT `bazer_cost_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `bazer_cost_ibfk_2` FOREIGN KEY (`mess_id`) REFERENCES `mess` (`mess_id`);
 
 --
 -- Constraints for table `meals`
@@ -152,6 +307,26 @@ ALTER TABLE `users`
 ALTER TABLE `meals`
   ADD CONSTRAINT `meals_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   ADD CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`mess_id`) REFERENCES `mess` (`mess_id`);
+
+--
+-- Constraints for table `member_money`
+--
+ALTER TABLE `member_money`
+  ADD CONSTRAINT `member_money_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `member_money_ibfk_2` FOREIGN KEY (`mess_id`) REFERENCES `mess` (`mess_id`);
+
+--
+-- Constraints for table `month_details`
+--
+ALTER TABLE `month_details`
+  ADD CONSTRAINT `month_details_ibfk_1` FOREIGN KEY (`mess_id`) REFERENCES `mess` (`mess_id`);
+
+--
+-- Constraints for table `other_cost`
+--
+ALTER TABLE `other_cost`
+  ADD CONSTRAINT `other_cost_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `other_cost_ibfk_2` FOREIGN KEY (`mess_id`) REFERENCES `mess` (`mess_id`);
 
 --
 -- Constraints for table `users`
