@@ -136,10 +136,10 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Member's Money</span>
                 </a>
-                <div id="collapseMember" class="collapse" aria-labelledby="headingUtilities"
+                <div id="collapseMember" class="collapse <?php if($page == 'manage_money'){echo 'show';}?>" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="bazer-cost.php">View Deposit</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_deposit'){echo 'active';}?>" href="view-deposit.php">View Deposit</a>
                     </div>
                 </div>
             </li>

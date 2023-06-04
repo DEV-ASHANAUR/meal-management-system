@@ -247,6 +247,46 @@
                 return false;
             }
         }
+        //get member deposit
+        public function getMembersDeposit($messId){
+            $this->sql = "SELECT member_money.*,users.user_name as user_name FROM member_money INNER JOIN users ON users.user_id = member_money.user_id WHERE member_money.mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //add deposit
+        public function addDeposit($user_id,$pay_date,$member_money,$messId,$created_by){
+            $this->sql = "INSERT INTO `member_money`(`user_id`, `mess_id`, `money`, `pay_date`, `created_by`) VALUES ('$user_id','$messId','$member_money','$pay_date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //retriveDepositbyid
+        public function retriveDepositbyid($depositId){
+            $this->sql = "SELECT * FROM member_money WHERE `id` = '$depositId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //updateMemberDeposit
+        public function updateMemberDeposit($deposit_id,$user_id,$pay_date,$member_money,$messId,$created_by){
+            $this->sql = "UPDATE `member_money` SET `user_id`='$user_id',`mess_id`='$messId',`money`='$member_money',`pay_date`='$pay_date',`created_by`='$created_by' WHERE `id` = '$deposit_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>
