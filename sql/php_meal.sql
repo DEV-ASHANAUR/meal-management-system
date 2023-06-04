@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 09:59 PM
+-- Generation Time: Jun 05, 2023 at 01:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -43,7 +43,8 @@ CREATE TABLE `bazer_cost` (
 --
 
 INSERT INTO `bazer_cost` (`bazer_id`, `user_id`, `mess_id`, `bazer_amount`, `bazer_description`, `bazer_date`, `created_by`, `created_at`) VALUES
-(1, 6, 8, 700, 'chicken,rui fish', '2023-06-04', 6, '2023-06-05 01:57:48');
+(1, 6, 8, 700, 'chicken,rui fish', '2023-06-04', 6, '2023-06-05 01:57:48'),
+(2, 9, 9, 1000, 'rice', '2023-06-04', 8, '2023-06-05 03:14:36');
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,11 @@ INSERT INTO `meals` (`meal_id`, `user_id`, `mess_id`, `meal`, `meal_date`, `crea
 (1, 6, 8, 1.5, '2023-06-04', 6, '2023-06-05 01:56:22'),
 (2, 7, 8, 2.5, '2023-06-04', 6, '2023-06-05 01:56:22'),
 (3, 6, 8, 2.5, '2023-06-05', 6, '2023-06-05 01:57:10'),
-(4, 7, 8, 2.5, '2023-06-05', 6, '2023-06-05 01:57:10');
+(4, 7, 8, 2.5, '2023-06-05', 6, '2023-06-05 01:57:10'),
+(5, 6, 8, 3.5, '2023-06-08', 6, '2023-06-05 03:07:18'),
+(6, 7, 8, 3.5, '2023-06-08', 6, '2023-06-05 03:07:18'),
+(7, 8, 9, 1.5, '2023-06-04', 8, '2023-06-05 03:14:12'),
+(8, 9, 9, 2, '2023-06-04', 8, '2023-06-05 03:14:12');
 
 -- --------------------------------------------------------
 
@@ -93,7 +98,9 @@ CREATE TABLE `member_money` (
 
 INSERT INTO `member_money` (`id`, `user_id`, `mess_id`, `money`, `pay_date`, `created_by`, `created_at`) VALUES
 (1, 6, 8, 2000, '2023-06-04', 6, '2023-06-05 01:58:19'),
-(2, 7, 8, 2000, '2023-06-04', 6, '2023-06-05 01:58:27');
+(2, 7, 8, 2000, '2023-06-04', 6, '2023-06-05 01:58:27'),
+(3, 8, 9, 1500, '2023-06-04', 8, '2023-06-05 03:14:53'),
+(4, 6, 8, 500, '2023-06-04', 6, '2023-06-05 03:28:40');
 
 -- --------------------------------------------------------
 
@@ -114,7 +121,8 @@ CREATE TABLE `mess` (
 --
 
 INSERT INTO `mess` (`mess_id`, `mess_name`, `mess_address`, `mess_type`, `mess_createdAt`) VALUES
-(8, 'Team8', 'Dhaka,Mirpur-11', 'Boys', '2023-06-05 01:53:03');
+(8, 'Team8', 'Dhaka,Mirpur-11', 'Boys', '2023-06-05 01:53:03'),
+(9, 'Jakkas', 'Mirpur-10', 'Boys', '2023-06-05 03:08:25');
 
 -- --------------------------------------------------------
 
@@ -138,7 +146,8 @@ CREATE TABLE `month_details` (
 --
 
 INSERT INTO `month_details` (`month_id`, `mess_id`, `month_name`, `start_date`, `end_date`, `status`, `created_by`, `created_at`) VALUES
-(1, 8, NULL, '2023-06-04', NULL, 0, 6, '2023-06-05 01:53:03');
+(1, 8, NULL, '2023-06-04', NULL, 0, 6, '2023-06-05 01:53:03'),
+(2, 9, NULL, '2023-06-04', NULL, 0, 8, '2023-06-05 03:08:25');
 
 -- --------------------------------------------------------
 
@@ -186,7 +195,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES
 (6, 'Md.Ashanaur Rahman', 'Monitor', '01866936562', 'ashanour009@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8),
-(7, 'Md Rasel ahamed', 'Manager', '01866936587', 'rasel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8);
+(7, 'Md Rasel ahamed', 'Manager', '01866936587', 'rasel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8),
+(8, 'Md Sagor Mia', 'Monitor', '01866936500', 'sagor@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 9),
+(9, 'Md Ruhul', 'Manager', '01866936511', 'ruhul@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 9);
 
 --
 -- Indexes for dumped tables
@@ -252,31 +263,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bazer_cost`
 --
 ALTER TABLE `bazer_cost`
-  MODIFY `bazer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `bazer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `member_money`
 --
 ALTER TABLE `member_money`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `mess`
 --
 ALTER TABLE `mess`
-  MODIFY `mess_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `mess_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `month_details`
 --
 ALTER TABLE `month_details`
-  MODIFY `month_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `month_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `other_cost`
@@ -288,7 +299,7 @@ ALTER TABLE `other_cost`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
