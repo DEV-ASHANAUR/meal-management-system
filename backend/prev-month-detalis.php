@@ -61,8 +61,14 @@
                             <td><?php echo date("Y-M-d", $sd); ?> - <?php echo date("Y-M-d", $ed); ?></td>
                             <td>
                                 <a class="btn btn-success" href="view-report.php?month-id=<?php echo $row->month_id; ?>"><i class="fas fa-eye"></i></a>
+                                <?php 
+                                    if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                                 <a class="btn btn-primary" href="edit-month.php?month-id=<?php echo $row->month_id; ?>"><i class="fas fa-edit"></i></a>
                                 <a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
+                                <?php
+                                    }
+                                ?>
                             </td>
                         </tr>
 

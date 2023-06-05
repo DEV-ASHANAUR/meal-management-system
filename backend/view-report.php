@@ -44,7 +44,13 @@
                             <th>Deposit Amount</th>
                             <th>Balance</th>
                             <th>Status</th>
+                            <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                             <th>Action</th>
+                            <?php 
+                            }
+                            ?>
                         </tr>
                     </thead>
                     <tfoot>
@@ -57,7 +63,13 @@
                             <th>Deposit Amount</th>
                             <th>Balance</th>
                             <th>Status</th>
+                            <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                             <th>Action</th>
+                            <?php 
+                            }
+                            ?>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -75,9 +87,17 @@
                             <td><?php echo $row->deposit_amount; ?></td>
                             <td><?php echo $row->balance; ?></td>
                             <td><?php if($row->paid_status == 0){echo 'unpaid';}else{echo 'paid';} ?></td>
-                            <td>
+                            
+                            <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
+                                <td>
                                 <a class="btn btn-success" href="action/report/update.php?report-id=<?php echo $row->report_id; ?>&status=<?php echo $row->paid_status; ?>&month-id=<?php echo $row->month_id; ?>">change status</a>
-                            </td>
+                                </td>
+                            <?php 
+                                }
+                            ?>
+                            
                         </tr>
 
                         <?php

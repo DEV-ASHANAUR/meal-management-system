@@ -36,7 +36,13 @@
                     <h4>Mess Balance</h4>
                     <div class="price">
                         <h3><span><?php echo number_format($mess_balance,2)?> tk</span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-deposit.php">View Details</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -45,7 +51,13 @@
                     <h4>Bazer Cost</h4>
                     <div class="price">
                         <h3><span><?php echo number_format($total_bazer,2)?> tk</span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-bazer.php">View Details</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -54,7 +66,13 @@
                     <h4>Others Cost</h4>
                     <div class="price">
                         <h3><span><?php echo number_format($total_others_cost,2)?> tk</span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-others.php">View Details</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -63,7 +81,13 @@
                     <h4>Total Deposit</h4>
                     <div class="price">
                         <h3><span><?php echo number_format($total_deposit,2)?> tk</span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-deposit.php">View Details</a>
+                        <?php
+                            }
+                            ?>
                     </div>
                 </div>
             </div>
@@ -72,7 +96,13 @@
                     <h4>Total Meal</h4>
                     <div class="price">
                         <h3><span><?php if($total_meal > 0){echo $total_meal;}else {echo 0;};?></span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-meal.php">View Details</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -81,7 +111,13 @@
                     <h4>Total Cost</h4>
                     <div class="price">
                         <h3><span><?php echo number_format($total_cost,2)?> tk</span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-bazer">View Details</a>
+                        <?php
+                            }
+                           ?>
                     </div>
                 </div>
             </div>
@@ -90,7 +126,13 @@
                     <h4>Meal Rate</h4>
                     <div class="price">
                         <h3><span><?php echo number_format($meal_rate,2)?> tk</span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="#">View Details</a>
+                        <?php
+                            }
+                           ?>
                     </div>
                 </div>
             </div>
@@ -99,7 +141,13 @@
                     <h4>Total Member</h4>
                     <div class="price">
                         <h3><span><?php echo $total_member;?></span></h3>
+                        <?php 
+                            if($user_role == 'Manager' || $user_role == 'Monitor'){
+                                ?>
                         <a href="view-user.php">View Details</a>
+                        <?php
+                            }
+                            ?>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@
     if(!isset($_SESSION['user_id'])){
         header('location:../login.php');
     }
+    $user_role = $_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +65,9 @@
             <div class="sidebar-heading">Interface</div>
 
             <!-- Nav Item - Pages Collapse Menu -->
+            <?php 
+                if($user_role == 'Monitor'){
+                    ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMess"
                     aria-expanded="true" aria-controls="collapseMess">
@@ -78,22 +82,34 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Manage User</span>
-                </a>
-                <div id="collapseTwo" class="collapse <?php if($page == 'manage_user'){echo 'show';}?>"
-                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item <?php if($sub_page == 'add_user'){echo 'active';}?>"
-                            href="add-user.php">Add User</a>
-                        <a class="collapse-item <?php if($sub_page == 'view_user'){echo 'active';}?>"
-                            href="view-user.php">View User</a>
-                    </div>
-                </div>
-            </li>
+            <?php
+                }
+            ?>
+            <?php 
+                if($user_role == 'Manager' || $user_role == 'Monitor'){
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="true" aria-controls="collapseTwo">
+                            <i class="fas fa-fw fa-cog"></i>
+                            <span>Manage User</span>
+                        </a>
+                        <div id="collapseTwo" class="collapse <?php if($page == 'manage_user'){echo 'show';}?>"
+                            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item <?php if($sub_page == 'add_user'){echo 'active';}?>"
+                                    href="add-user.php">Add User</a>
+                                <a class="collapse-item <?php if($sub_page == 'view_user'){echo 'active';}?>"
+                                    href="view-user.php">View User</a>
+                            </div>
+                        </div>
+                    </li>
+                    <?php
+                }
+            ?>
+            <?php 
+                if($user_role == 'Manager' || $user_role == 'Monitor'){
+                    ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Manage_meal"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -110,9 +126,14 @@
                     </div>
                 </div>
             </li>
-
+            <?php
+                }
+            ?>
 
             <!-- Nav Item - Utilities Collapse Menu -->
+            <?php 
+                if($user_role == 'Manager' || $user_role == 'Monitor'){
+                    ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -129,7 +150,12 @@
                     </div>
                 </div>
             </li>
-
+            <?php
+                }
+            ?>
+            <?php 
+                if($user_role == 'Manager' || $user_role == 'Monitor'){
+                    ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMember"
                     aria-expanded="true" aria-controls="collapseMember">
@@ -143,7 +169,9 @@
                     </div>
                 </div>
             </li>
-
+            <?php
+                }
+            ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePresentMonth"
                     aria-expanded="true" aria-controls="collapsePresentMonth">
