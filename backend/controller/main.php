@@ -456,6 +456,36 @@
                 return false;
             }
         }
+        //getHistory into the month details table
+        public function getHistory($messId){
+            $this->sql = "SELECT * FROM `month_details` WHERE `mess_id` =  '$messId' AND `status` = 1";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //get report by month id
+        public function getReport($monthId){
+            $this->sql = "SELECT * FROM `month_report` WHERE `month_id` = '$monthId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //updatePaidStatus
+        public function updatePaidStatus($reportId,$status){
+            $this->sql = "UPDATE `month_report` SET `paid_status`='$status' WHERE `report_id` = '$reportId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
 
 
     }

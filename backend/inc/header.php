@@ -164,10 +164,10 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Previous Month</span>
                 </a>
-                <div id="collapsePrevMonth" class="collapse" aria-labelledby="headingUtilities"
+                <div id="collapsePrevMonth" class="collapse <?php if($page == 'manage_prev_month'){echo 'show';}?>" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="bazer-cost.php">view Details</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_details'){echo 'active';}?>" href="prev-month-detalis.php">view Details</a>
                     </div>
                 </div>
             </li>
