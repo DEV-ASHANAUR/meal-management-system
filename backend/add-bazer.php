@@ -103,8 +103,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="category_id">Shopper's Name</label>
-                                        <select class="form-control text-capitalize" name="user_id" id="user_id">
-                                            <option value="">Select Name</option>
+                                        <select class="form-control text-capitalize" name="user_id" id="user_id" required>
+                                            <option value="" disabled selected hidden>Select Name</option>
                                             <?php if($users->num_rows>0){
                                                 while($row = $users->fetch_object()){
                                                     ?>
@@ -179,7 +179,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="category_id">Shopper's Name</label>
-                                        <select class="form-control text-capitalize" name="user_id" id="user_id">
+                                        <select class="form-control text-capitalize" name="user_id" id="user_id" required>
                                             <option value="">Select Name</option>
                                             <?php if($users->num_rows>0){
                                                 while($row = $users->fetch_object()){
@@ -202,7 +202,7 @@
                                     <div class="mb-3">
                                         <label for="name">Bazer Description</label>
                                         <textarea name="bazer_description" class="form-control" id="" cols="3" rows="3"
-                                            placeholder="Enter Description"></textarea>
+                                            placeholder="Enter Description" required></textarea>
                                         
                                     </div>
                                 </div>

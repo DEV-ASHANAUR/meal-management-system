@@ -6,6 +6,7 @@
     include "inc/header.php"; 
     $obj = new Main();
     $messId = $_SESSION['mess_id'];
+    $userId = $_SESSION['user_id'];
     $users = $obj->getAllUser($messId);
     ?>
 
@@ -29,6 +30,24 @@
                         class="fas fa-plus-circle mr-1"></i>Add User</a></small>
         </div>
         <div class="card-body">
+                    <?php
+                    if(isset($_SESSION['msg']['addsuccesss'])){
+                        ?>
+                    <script type="text/javascript">
+                    toastr.success("<?php echo Flass_data::show_error();?>");
+                    </script>
+                    <?php 
+                                }
+                            ?>
+                    <?php
+                            if(isset($_SESSION['msg']['add_error'])){
+                                ?>
+                    <script type="text/javascript">
+                    toastr.error("<?php echo Flass_data::show_error();?>");
+                    </script>
+                    <?php 
+                            }
+                        ?>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -66,7 +85,7 @@
                             <td><?php echo $row->user_email; ?></td>
                             <td>
                                 <a class="btn btn-primary" href="add-user.php?user-id=<?php echo $row->user_id; ?>"><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
+                                <a class="btn btn-danger <?php if($row->user_id == $userId){echo 'disabled';} ?>" onclick="return confirm('Are you sure you want to delete this user?');" href="action/user/delete.php?user-id=<?php echo $row->user_id;?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
 

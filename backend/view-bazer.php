@@ -29,6 +29,24 @@
                         class="fas fa-plus-circle mr-1"></i>Add Bazer</a></small>
         </div>
         <div class="card-body">
+                <?php
+                    if(isset($_SESSION['msg']['addsuccesss'])){
+                        ?>
+                    <script type="text/javascript">
+                    toastr.success("<?php echo Flass_data::show_error();?>");
+                    </script>
+                    <?php 
+                                }
+                            ?>
+                    <?php
+                            if(isset($_SESSION['msg']['add_error'])){
+                                ?>
+                    <script type="text/javascript">
+                    toastr.error("<?php echo Flass_data::show_error();?>");
+                    </script>
+                <?php 
+                        }
+                    ?>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -66,7 +84,7 @@
                             <td><?php echo date("Y-M-d", $d); ?></td>
                             <td>
                                 <a class="btn btn-primary" href="add-bazer.php?bazer-id=<?php echo $row->bazer_id; ?>"><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
+                                <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this bazar?');" href="action/bazer/delete.php?id=<?php echo $row->bazer_id; ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
 

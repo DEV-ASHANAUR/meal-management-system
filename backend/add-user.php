@@ -98,14 +98,14 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="category_id">Select role</label>
-                                        <select class="form-control" name="user_role" id="user_role" required />
-                                        <option value="">Select Role</option>
-                                        <option <?php if($user_role == "Monitor"){echo "selected";} ?> value="Monitor">
-                                            Monitor</option>
-                                        <option <?php if($user_role == "Manager"){echo "selected";} ?> value="Manager">
-                                            Manager</option>
-                                        <option <?php if($user_role == "Member"){echo "selected";} ?> value="Member">
-                                            Member</option>
+                                        <select class="form-control" name="user_role" id="user_role" required>
+                                            <option value="">Select Role</option>
+                                            <option <?php if($user_role == "Monitor"){echo "selected";} ?> value="Monitor">
+                                                Monitor</option>
+                                            <option <?php if($user_role == "Manager"){echo "selected";} ?> value="Manager">
+                                                Manager</option>
+                                            <option <?php if($user_role == "Member"){echo "selected";} ?> value="Member">
+                                                Member</option>
                                         </select>
                                     </div>
                                     <div class="mb-3">

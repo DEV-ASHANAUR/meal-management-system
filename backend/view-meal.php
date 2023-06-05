@@ -29,6 +29,24 @@
                         class="fas fa-plus-circle mr-1"></i>Add Meal</a></small>
         </div>
         <div class="card-body">
+                <?php
+                    if(isset($_SESSION['msg']['addsuccesss'])){
+                        ?>
+                    <script type="text/javascript">
+                    toastr.success("<?php echo Flass_data::show_error();?>");
+                    </script>
+                    <?php 
+                                }
+                            ?>
+                    <?php
+                            if(isset($_SESSION['msg']['add_error'])){
+                                ?>
+                    <script type="text/javascript">
+                    toastr.error("<?php echo Flass_data::show_error();?>");
+                    </script>
+                    <?php 
+                            }
+                        ?>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -62,7 +80,7 @@
                                 <a class="btn btn-primary"
                                     href="add-meal.php?meal-date=<?php echo $row->meal_date; ?>"><i
                                         class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
+                                <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this meal?');" href="action/meal/delete.php?meal-date=<?php echo $row->meal_date; ?>" ><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
 

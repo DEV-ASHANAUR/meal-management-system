@@ -88,6 +88,16 @@
                 return false;
             }
         }
+        //deleteUser
+        public function deleteUser($userId){
+            $this->sql = "DELETE FROM `users` WHERE `user_id` = '$userId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
         //check any other same to me or not
         public function retrivewithoutme($id,$email){
             $this->sql = "SELECT * FROM `users` WHERE `user_id` != '$id' AND `user_email` = '$email'";
@@ -147,6 +157,16 @@
                 return false;
             }
         }
+        //delete meal by meal id
+        public function deleteMeal($mealDate){
+            $this->sql = "DELETE FROM `meals` WHERE `meal_date` = '$mealDate'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
         //getMealByGroupOfDate -
         //get regular meal list by mess id
         public function getMealByGroupOfDate($messId){
@@ -171,6 +191,16 @@
         //add bazer
         public function addBazer($user_id,$bazer_date,$bazer_amount,$bazer_description,$messId,$created_by){
             $this->sql = "INSERT INTO `bazer_cost`(`user_id`, `mess_id`, `bazer_amount`, `bazer_description`, `bazer_date`, `created_by`) VALUES ($user_id,'$messId','$bazer_amount','$bazer_description','$bazer_date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //deleteBazar
+        public function deleteBazar($id){
+            $this->sql = "DELETE FROM `bazer_cost` WHERE `bazer_id` = '$id'";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return true;
@@ -203,6 +233,16 @@
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //deleteothers
+        public function deleteOther($id){
+            $this->sql = "DELETE FROM `other_cost` WHERE `other_id` = '$id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
             }else{
                 return false;
             }
@@ -260,6 +300,16 @@
         //add deposit
         public function addDeposit($user_id,$pay_date,$member_money,$messId,$created_by){
             $this->sql = "INSERT INTO `member_money`(`user_id`, `mess_id`, `money`, `pay_date`, `created_by`) VALUES ('$user_id','$messId','$member_money','$pay_date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //deleteDeposit
+        public function deleteDeposit($id){
+            $this->sql = "DELETE FROM `member_money` WHERE `id` = '$id'";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return true;

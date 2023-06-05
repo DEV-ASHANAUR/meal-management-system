@@ -8,15 +8,15 @@
         $status = $_GET['status'];
         $monthId = $_GET['month-id'];
         if($status == 0){
-            $status = $obj->updatePaidStatus($report_id,1);
-            if($status == true){
+            $status1 = $obj->updatePaidStatus($report_id,1);
+            if($status1 == true){
                 Flass_data::addsuccess('Status Updated!');
                 header("location:../../view-report.php?month-id=$monthId"); 
                 exit();
             }
         }else{
-            $status = $obj->updatePaidStatus($report_id,0);
-            if($status == true){
+            $status1 = $obj->updatePaidStatus($report_id,0);
+            if($status1 == true){
                 Flass_data::addsuccess('Status Updated!');
                 header("location:../../view-report.php?month-id=$monthId"); 
                 exit();
