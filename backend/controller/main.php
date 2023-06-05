@@ -486,6 +486,26 @@
                 return false;
             }
         }
+        //>retriveMonthById($m_id)
+        public function retriveMonthById($m_id){
+            $this->sql = "SELECT * FROM `month_details` WHERE `month_id` = '$m_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //updateMonthName($month_id,$month_id)
+        public function updateMonthName($month_id,$month_name){
+            $this->sql = "UPDATE `month_details` SET `month_name`='$month_name' WHERE `month_id` = '$month_id'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
 
 
     }
