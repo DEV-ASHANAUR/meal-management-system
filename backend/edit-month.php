@@ -80,8 +80,6 @@
                                 <div class="card-footer">
                                     <input type="hidden" name="submit" />
                                     <input type="hidden" name="month_id" value="<?php echo $m_id;?>" />
-                                    <input type="hidden" name="submit" />
-
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
