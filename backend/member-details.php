@@ -6,6 +6,8 @@
     include "inc/header.php"; 
     $obj = new Main();
     $messId = $_SESSION['mess_id'];
+    //today 
+    $today = date('Y-m-d');
     //all calculation 
     $total_deposit = $obj->total_deposit($messId);
     $total_bazer = $obj->total_bazer($messId);
@@ -45,7 +47,25 @@
             <span><i class="fas fa-list mr-1"></i>View Details</span>
         </div>
         <div class="card-body">
-            <form action="" method="post">
+            <?php
+                if(isset($_SESSION['msg']['addsuccesss'])){
+                    ?>
+            <script type="text/javascript">
+            toastr.success("<?php echo Flass_data::show_error();?>");
+            </script>
+            <?php 
+                    }
+                ?>
+            <?php
+                if(isset($_SESSION['msg']['add_error'])){
+                    ?>
+            <script type="text/javascript">
+            toastr.error("<?php echo Flass_data::show_error();?>");
+            </script>
+            <?php 
+                }
+            ?>
+            <form action="action/report/insert.php" method="post">
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead class="bg-info text-white">
@@ -69,7 +89,7 @@
                                 <td><?php echo $si;?></td>
                                 <td>
                                     <?php echo $row->user_name;?>
-                                    <input type="hidden" name="name[]" value="<?php echo $row->user_name;?>">
+                                    <input type="hidden" name="user_name[]" value="<?php echo $row->user_name;?>">
                                 </td>
                                 <td>
                                     <?php echo number_format($meal_rate,2)." Tk" ?>
@@ -140,9 +160,14 @@
                                             ?>
                                     <input type="hidden" name="balance[]"
                                         value="<?php echo -(round($meal_rate*$row->total,2)) ?>">
+                                        
                                     <?php
                                         }
                                     ?>
+                                    <input type="hidden" name="created_by" value="<?php echo $_SESSION['user_name']; ?>" />
+                                    <input type="hidden" name="mess_id" value="<?php echo $messId; ?>" />
+                                    <input type="hidden" name="today" value="<?php echo $today; ?>" />
+                                    <input type="hidden" name="submit" />
                                 </td>
                             </tr>
                             <?php
@@ -167,7 +192,7 @@
                         </tfoot>
                     </table>
                 </div>
-                <form>
+            <form>
         </div>
     </div>
 

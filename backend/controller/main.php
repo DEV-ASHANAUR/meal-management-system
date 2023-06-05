@@ -368,10 +368,50 @@
          * get member wise total meal
          */
         public function member_meal($messId){
-            $this->sql = "SELECT SUM(meals.meal) as total, users.user_name as user_name,users.user_id FROM `meals` INNER JOIN users ON users.user_id = meals.user_id WHERE meals.mess_id = '$messId' GROUP BY users.user_id;";
+            $this->sql = "SELECT SUM(meals.meal) as total, users.user_name as user_name,users.user_id FROM `meals` INNER JOIN users ON users.user_id = meals.user_id WHERE meals.mess_id = '$messId' GROUP BY users.user_id";
             $this->result = $this->con->query($this->sql);
             if($this->result == true){
                 return $this->result;
+            }else{
+                return false;
+            }
+        }
+        //get the month details by mess id and where status = 0
+        public function getMonthDetails($mess_id){
+            $this->sql = "SELECT * FROM `month_details` WHERE `mess_id` = '$mess_id' AND status = 0";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            } 
+        }
+        //update month details table with end date and status = 1
+        public function updateMonthDetails($monthId,$date){
+            $this->sql = "UPDATE `month_details` SET `end_date`='$date',`status`= 1 WHERE `month_id` = '$monthId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            } 
+        }
+        //create month wise report
+        public function createReport($user_name,$meal_rate,$total_meal,$total_cost,$deposit_amount,$balance,$monthId,$created_by){
+            $this->sql = "INSERT INTO `month_report`(`user_name`, `meal_rate`, `total_meal`, `total_cost`, `deposit_amount`, `balance`, `month_id`, `created_by`) VALUES ('$user_name','$meal_rate','$total_meal','$total_cost','$deposit_amount','$balance','$monthId','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            } 
+        }
+        //start a new month
+        public function start_month($start_date,$messId,$created_by){
+            $this->sql = "INSERT INTO `month_details`(`mess_id`, `start_date`, `created_by`) VALUES ('$messId','$start_date','$created_by')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
             }else{
                 return false;
             }
