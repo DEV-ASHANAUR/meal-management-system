@@ -71,7 +71,7 @@
                 <div class="month_details_box p5">
                     <h4>Total Meal</h4>
                     <div class="price">
-                        <h3><span><?php echo $total_meal;?></span></h3>
+                        <h3><span><?php if($total_meal > 0){echo $total_meal;}else {echo 0;};?></span></h3>
                         <a href="view-meal.php">View Details</a>
                     </div>
                 </div>

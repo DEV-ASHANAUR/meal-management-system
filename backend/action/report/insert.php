@@ -36,7 +36,13 @@
 
             if($reportStatus == true){
                 $startStatus = $obj->start_month($date,$mess_id,$created_by);
+                
                 if($startStatus === true){
+                    $obj->deleteAllBazer($mess_id);
+                    $obj->deleteAllOthers($mess_id);
+                    $obj->deleteAllMeals($mess_id);
+                    $obj->deleteAllMembersMoney($mess_id);
+                    
                     Flass_data::addsuccess('Successfully Store Present Month Report And Start New Month!');
                     header("location:../../member-details.php"); 
                     exit();
@@ -49,7 +55,7 @@
             }
 
         }else{
-            Flass_data::addError('Month id nai!');
+            Flass_data::addError('Month id Missing!');
             header("location:../../member-details.php"); 
             exit();
         }

@@ -416,6 +416,46 @@
                 return false;
             }
         }
+        //delete all bazer cost by messId
+        public function deleteAllBazer($messId){
+            $this->sql = "DELETE FROM `bazer_cost` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //delete all Others cost by messId
+        public function deleteAllOthers($messId){
+            $this->sql = "DELETE FROM `other_cost` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //delete all Meals cost by messId
+        public function deleteAllMeals($messId){
+            $this->sql = "DELETE FROM `meals` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //delete all Member's Money cost by messId
+        public function deleteAllMembersMoney($messId){
+            $this->sql = "DELETE FROM `member_money` WHERE `mess_id` = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
 
 
     }
