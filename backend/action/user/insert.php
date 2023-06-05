@@ -23,7 +23,6 @@
         }
         //create mess
         $status = $obj->createUser($user_name,$user_role,$user_email,$user_mobile,$messId,md5($password));
-        echo $status;
         if($status === true){
             Flass_data::addsuccess('User created Successfully!');
             header("location:../../add-user.php"); 

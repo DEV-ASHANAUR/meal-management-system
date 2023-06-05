@@ -20,7 +20,6 @@
         }
         //create mess
         $status = $obj->editMess($messId,$messname,$messtype,$messaddress);
-        echo $status;
         if($status === true){
             Flass_data::addsuccess('Edit Success!');
             header("location:../../edit-mess.php"); 

@@ -15,7 +15,6 @@
 
         //create mess
         $status = $obj->updateMemberDeposit($deposit_id,$user_id,$pay_date,$member_money,$messId,$created_by);
-        echo $status;
         if($status === true){
             Flass_data::addsuccess('Deposit Edit Successfully!');
             header("location:../../add-deposit.php?deposit-id=$deposit_id"); 

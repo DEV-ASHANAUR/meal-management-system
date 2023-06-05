@@ -17,8 +17,7 @@
 
         //update meal
         $status = false;
-        for ($i=0; $i < count($user_id); $i++) { 
-            echo $user_id[$i];
+        for ($i=0; $i < count($user_id); $i++) {
             $status = $obj->updateMeal($user_id[$i],$meal[$i],$created_by,$mess_id,$date);
         }
         // echo $status;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 03:07 PM
+-- Generation Time: Jun 05, 2023 at 11:38 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -38,13 +38,6 @@ CREATE TABLE `bazer_cost` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `bazer_cost`
---
-
-INSERT INTO `bazer_cost` (`bazer_id`, `user_id`, `mess_id`, `bazer_amount`, `bazer_description`, `bazer_date`, `created_by`, `created_at`) VALUES
-(2, 9, 9, 1000, 'rice', '2023-06-04', 8, '2023-06-05 03:14:36');
-
 -- --------------------------------------------------------
 
 --
@@ -60,14 +53,6 @@ CREATE TABLE `meals` (
   `created_by` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `meals`
---
-
-INSERT INTO `meals` (`meal_id`, `user_id`, `mess_id`, `meal`, `meal_date`, `created_by`, `created_at`) VALUES
-(7, 8, 9, 1.5, '2023-06-04', 8, '2023-06-05 03:14:12'),
-(8, 9, 9, 2, '2023-06-04', 8, '2023-06-05 03:14:12');
 
 -- --------------------------------------------------------
 
@@ -85,13 +70,6 @@ CREATE TABLE `member_money` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `member_money`
---
-
-INSERT INTO `member_money` (`id`, `user_id`, `mess_id`, `money`, `pay_date`, `created_by`, `created_at`) VALUES
-(3, 8, 9, 1500, '2023-06-04', 8, '2023-06-05 03:14:53');
-
 -- --------------------------------------------------------
 
 --
@@ -105,14 +83,6 @@ CREATE TABLE `mess` (
   `mess_type` varchar(255) DEFAULT NULL,
   `mess_createdAt` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `mess`
---
-
-INSERT INTO `mess` (`mess_id`, `mess_name`, `mess_address`, `mess_type`, `mess_createdAt`) VALUES
-(8, 'Team8', 'Dhaka,Mirpur-11', 'Boys', '2023-06-05 01:53:03'),
-(9, 'Jakkas', 'Mirpur-10', 'Boys', '2023-06-05 03:08:25');
 
 -- --------------------------------------------------------
 
@@ -130,15 +100,6 @@ CREATE TABLE `month_details` (
   `created_by` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `month_details`
---
-
-INSERT INTO `month_details` (`month_id`, `mess_id`, `month_name`, `start_date`, `end_date`, `status`, `created_by`, `created_at`) VALUES
-(1, 8, 'June', '2023-06-04', '2023-06-05', 1, 6, '2023-06-05 01:53:03'),
-(2, 9, NULL, '2023-06-04', NULL, 0, 8, '2023-06-05 03:08:25'),
-(6, 8, NULL, '2023-06-05', NULL, 0, 0, '2023-06-05 17:43:36');
 
 -- --------------------------------------------------------
 
@@ -159,14 +120,6 @@ CREATE TABLE `month_report` (
   `created_by` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `month_report`
---
-
-INSERT INTO `month_report` (`report_id`, `user_name`, `meal_rate`, `total_meal`, `total_cost`, `deposit_amount`, `balance`, `month_id`, `paid_status`, `created_by`, `created_at`) VALUES
-(1, 'Md.Ashanaur Rahman', 75, 7.5, 562.5, 2500, 1937.5, 1, 1, 'Md.Ashanaur Rahman', '2023-06-05 17:43:36'),
-(2, 'Md Rasel ahamed', 75, 8.5, 637.5, 2000, 1362.5, 1, 0, 'Md.Ashanaur Rahman', '2023-06-05 17:43:36');
 
 -- --------------------------------------------------------
 
@@ -200,16 +153,6 @@ CREATE TABLE `users` (
   `user_password` varchar(255) NOT NULL,
   `mess_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`, `user_role`, `user_mobile`, `user_email`, `user_password`, `mess_id`) VALUES
-(6, 'Md.Ashanaur Rahman', 'Monitor', '01866936562', 'ashanour009@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8),
-(7, 'Md Rasel ahamed', 'Manager', '01866936587', 'rasel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 8),
-(8, 'Md Sagor Mia', 'Monitor', '01866936500', 'sagor@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 9),
-(9, 'Md Ruhul', 'Manager', '01866936511', 'ruhul@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 9);
 
 --
 -- Indexes for dumped tables
@@ -282,19 +225,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bazer_cost`
 --
 ALTER TABLE `bazer_cost`
-  MODIFY `bazer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bazer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `member_money`
 --
 ALTER TABLE `member_money`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `mess`
@@ -312,19 +255,19 @@ ALTER TABLE `month_details`
 -- AUTO_INCREMENT for table `month_report`
 --
 ALTER TABLE `month_report`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `other_cost`
 --
 ALTER TABLE `other_cost`
-  MODIFY `other_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `other_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

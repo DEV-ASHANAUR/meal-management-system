@@ -16,7 +16,6 @@
 
         //create mess
         $status = $obj->updateBazer($bazer_id,$user_id,$bazer_date,$bazer_amount,$bazer_description,$messId,$created_by);
-        echo $status;
         if($status === true){
             Flass_data::addsuccess('Bazer Edit Successfully!');
             header("location:../../add-bazer.php?bazer-id=$bazer_id"); 
