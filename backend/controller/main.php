@@ -556,6 +556,26 @@
                 return false;
             }
         }
+        //add food preference
+        public function addFood($user_id,$food_type,$food_list,$messId){
+            $this->sql = "INSERT INTO `food`(`user_id`, `mess_id`, `food_type`, `food_list`) VALUES ('$user_id','$messId','$food_type','$food_list')";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //view food prefrence
+        public function viewfoodPreference($messId){
+            $this->sql = "SELECT food.*,users.user_name as user_name FROM food INNER JOIN users ON food.user_id = users.user_id WHERE food.mess_id = '$messId'";
+            $this->result = $this->con->query($this->sql);
+            if($this->result == true){
+                return $this->result;
+            }else{
+                return false;
+            }
+        }
 
 
     }

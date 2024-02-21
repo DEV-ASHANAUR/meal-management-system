@@ -129,7 +129,7 @@
                         <?php 
                             if($user_role == 'Manager' || $user_role == 'Monitor'){
                                 ?>
-                        <a href="#">View Details</a>
+                        <a href="member-details.php">View Details</a>
                         <?php
                             }
                            ?>
@@ -162,3 +162,7 @@
 
 
 <?php include "inc/footer.php"; ?>
+
+
+
+

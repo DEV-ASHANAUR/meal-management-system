@@ -156,22 +156,25 @@
                                     </span>
                                     <?php
                                         if($bal !== 0){
-                                            echo - number_format($meal_rate*$row->total,2)." Tk"
+                                            echo "-". number_format($meal_rate*$row->total,2)." Tk"
                                             ?>
                                     <input type="hidden" name="balance[]"
                                         value="<?php echo -(round($meal_rate*$row->total,2)) ?>">
-                                        
+
                                     <?php
                                         }
                                     ?>
-                                    <input type="hidden" name="created_by" value="<?php echo $_SESSION['user_name']; ?>" />
+                                    <input type="hidden" name="created_by"
+                                        value="<?php echo $_SESSION['user_name']; ?>" />
                                     <input type="hidden" name="mess_id" value="<?php echo $messId; ?>" />
                                     <input type="hidden" name="today" value="<?php echo $today; ?>" />
                                     <input type="hidden" name="submit" />
                                 </td>
                             </tr>
-                            <?php
+                            <?php 
+                                 $si++;
                                     }
+                                    
                                 }
                             ?>
                         </tbody>
@@ -192,7 +195,7 @@
                         </tfoot>
                     </table>
                 </div>
-            <form>
+                <form>
         </div>
     </div>
 

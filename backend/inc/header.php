@@ -88,25 +88,51 @@
             <?php 
                 if($user_role == 'Manager' || $user_role == 'Monitor'){
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fas fa-fw fa-cog"></i>
-                            <span>Manage User</span>
-                        </a>
-                        <div id="collapseTwo" class="collapse <?php if($page == 'manage_user'){echo 'show';}?>"
-                            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item <?php if($sub_page == 'add_user'){echo 'active';}?>"
-                                    href="add-user.php">Add User</a>
-                                <a class="collapse-item <?php if($sub_page == 'view_user'){echo 'active';}?>"
-                                    href="view-user.php">View User</a>
-                            </div>
-                        </div>
-                    </li>
-                    <?php
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Manage User</span>
+                </a>
+                <div id="collapseTwo" class="collapse <?php if($page == 'manage_user'){echo 'show';}?>"
+                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item <?php if($sub_page == 'add_user'){echo 'active';}?>"
+                            href="add-user.php">Add User</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_user'){echo 'active';}?>"
+                            href="view-user.php">View User</a>
+                    </div>
+                </div>
+            </li>
+            <?php
                 }
             ?>
+            <?php 
+            if($user_role !== 'Monitor'){
+                ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Manage_food"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Manage food Preference</span>
+                </a>
+                <div id="Manage_food" class="collapse <?php if($page == 'manage_food'){echo 'show';}?>"
+                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <?php 
+                        if($user_role == 'Member'){
+                            ?>
+                        <a class="collapse-item <?php if($sub_page == 'add_food'){echo 'active';}?>"
+                            href="add-food.php">Add Food</a>
+                        <?php
+                        } ?>
+                        <a class="collapse-item <?php if($sub_page == 'view_food'){echo 'active';}?>"
+                            href="view-food.php">View Food</a>
+                    </div>
+                </div>
+            </li>
+            <?php
+                        } ?>
             <?php 
                 if($user_role == 'Manager' || $user_role == 'Monitor'){
                     ?>
@@ -162,10 +188,11 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Member's Money</span>
                 </a>
-                <div id="collapseMember" class="collapse <?php if($page == 'manage_money'){echo 'show';}?>" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseMember" class="collapse <?php if($page == 'manage_money'){echo 'show';}?>"
+                    aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item <?php if($sub_page == 'view_deposit'){echo 'active';}?>" href="view-deposit.php">View Deposit</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_deposit'){echo 'active';}?>"
+                            href="view-deposit.php">View Deposit</a>
                     </div>
                 </div>
             </li>
@@ -178,10 +205,12 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Present Month</span>
                 </a>
-                <div id="collapsePresentMonth" class="collapse <?php if($page == 'manage_member_details'){echo 'show';}?>" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePresentMonth"
+                    class="collapse <?php if($page == 'manage_member_details'){echo 'show';}?>"
+                    aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item <?php if($sub_page == 'view_member_details'){echo 'active';}?>" href="member-details.php">Member Details</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_member_details'){echo 'active';}?>"
+                            href="member-details.php">Member Details</a>
                     </div>
                 </div>
             </li>
@@ -192,10 +221,11 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Previous Month</span>
                 </a>
-                <div id="collapsePrevMonth" class="collapse <?php if($page == 'manage_prev_month'){echo 'show';}?>" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePrevMonth" class="collapse <?php if($page == 'manage_prev_month'){echo 'show';}?>"
+                    aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item <?php if($sub_page == 'view_details'){echo 'active';}?>" href="prev-month-detalis.php">view Details</a>
+                        <a class="collapse-item <?php if($sub_page == 'view_details'){echo 'active';}?>"
+                            href="prev-month-detalis.php">view Details</a>
                     </div>
                 </div>
             </li>
@@ -249,7 +279,7 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -260,7 +290,7 @@
                                     <?php
                                         echo $_SESSION['user_name'];
                                     ?>
-                                    </span>
+                                </span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
                             </a>
                             <!-- Dropdown - User Information -->
